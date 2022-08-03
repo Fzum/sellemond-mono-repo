@@ -19,6 +19,12 @@
       "@sellemond/portfolio/feature-hero": [
         "libs/portfolio/feature-hero/src/index.ts"
       ],
+      "@sellemond/portfolio/feature-introduction": [
+        "libs/portfolio/feature-introduction/src/index.ts"
+      ],
+      "@sellemond/portfolio/feature-projects": [
+        "libs/portfolio/feature-projects/src/index.ts"
+      ],
       "@sellemond/shared/ui-components": [
         "libs/shared/ui-components/src/index.ts"
       ]
