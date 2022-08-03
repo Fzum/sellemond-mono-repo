@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "portfolio": "apps/portfolio",
+    "portfolio-domain": "libs/portfolio/domain",
     "portfolio-e2e": "apps/portfolio-e2e",
     "shared-ui-components": "libs/shared/ui-components"
   }

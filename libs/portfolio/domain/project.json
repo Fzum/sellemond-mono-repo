@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/portfolio/domain/src",
+  "prefix": "portfolio",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/portfolio/domain"],
+      "options": {
+        "jestConfig": "libs/portfolio/domain/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/portfolio/domain/**/*.ts",
+          "libs/portfolio/domain/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:portfolio", "type:domain-logic"]
+}
