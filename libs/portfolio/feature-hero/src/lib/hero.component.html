@@ -1,1 +1,5 @@
-<components-ui-hero></components-ui-hero>
+<components-ui-hero
+  [description]="description$ | async"
+  [imageUrl]="imageUrl$ | async"
+  [title]="title$ | async"
+></components-ui-hero>
