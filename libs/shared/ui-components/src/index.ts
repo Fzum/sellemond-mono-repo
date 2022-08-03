@@ -1,1 +1,1 @@
-export * from './lib/shared-ui-components.module';
+export * from './lib/ui-hero/ui-hero.component';
