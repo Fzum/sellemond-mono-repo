@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@sellemond/portfolio/domain": ["libs/portfolio/domain/src/index.ts"],
+      "@sellemond/portfolio/feature-hero": [
+        "libs/portfolio/feature-hero/src/index.ts"
+      ],
       "@sellemond/shared/ui-components": [
         "libs/shared/ui-components/src/index.ts"
       ]

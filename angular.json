@@ -5,6 +5,7 @@
     "portfolio": "apps/portfolio",
     "portfolio-domain": "libs/portfolio/domain",
     "portfolio-e2e": "apps/portfolio-e2e",
+    "portfolio-feature-hero": "libs/portfolio/feature-hero",
     "shared-ui-components": "libs/shared/ui-components"
   }
 }

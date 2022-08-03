@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/portfolio/feature-hero/src",
+  "prefix": "portfolio",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/portfolio/feature-hero"],
+      "options": {
+        "jestConfig": "libs/portfolio/feature-hero/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/portfolio/feature-hero/**/*.ts",
+          "libs/portfolio/feature-hero/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:portfolio", "type:feature"]
+}
