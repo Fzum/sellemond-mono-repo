@@ -25,6 +25,9 @@
       "@sellemond/portfolio/feature-projects": [
         "libs/portfolio/feature-projects/src/index.ts"
       ],
+      "@sellemond/portfolio/feature-techstack": [
+        "libs/portfolio/feature-techstack/src/index.ts"
+      ],
       "@sellemond/shared/ui-components": [
         "libs/shared/ui-components/src/index.ts"
       ]

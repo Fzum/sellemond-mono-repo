@@ -1,0 +1,29 @@
+<section class="text-gray-400 bg-gray-800 body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap justify-center">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h2 class="text-xs text-indigo-400 tracking-widest font-medium title-font mb-1">A winning Stack makes a winning team!</h2>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font text-white">My main tech stack</h1>
+    </div>
+
+    <div class="flex gap-5">
+      <div *ngFor="let t of techstackFacade.technologies$ | async"
+           class="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-900">
+
+        <div class="flex justify-center -mt-16 md:justify-end">
+          <div class=" border-2 border-indigo-500 dark:border-indigo-400 rounded-full">
+            <img class="p-2 hover:contrast-150 object-cover w-20 h-20" alt="technology-icon" [src]="t.imgUrl">
+          </div>
+        </div>
+        <h2 class="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">{{ t.title }}</h2>
+
+        <p class="mt-2 leading-relaxed text-base">{{ t.descriptionHtml }}</p>
+
+        <div class="flex justify-center mt-4">
+          <a [href]="t.link" target="_blank" class="text-xl font-medium text-indigo-500 dark:text-indigo-300">Official
+            Website
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

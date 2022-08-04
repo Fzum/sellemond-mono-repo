@@ -8,6 +8,7 @@
     "portfolio-feature-hero": "libs/portfolio/feature-hero",
     "portfolio-feature-introduction": "libs/portfolio/feature-introduction",
     "portfolio-feature-projects": "libs/portfolio/feature-projects",
+    "portfolio-feature-techstack": "libs/portfolio/feature-techstack",
     "shared-ui-components": "libs/shared/ui-components"
   }
 }

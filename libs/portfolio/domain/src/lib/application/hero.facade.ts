@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { HeroContent } from '../entities/hero-content';
+import { HeroContent } from '../entities/hero-content.model';
 
 const description =
   "I'm Fabian, a freelancer passionate about software engineering. " +
