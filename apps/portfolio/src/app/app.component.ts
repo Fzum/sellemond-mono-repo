@@ -83,7 +83,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.observer = new IntersectionObserver((entries) => {
-      console.log(entries);
       const mainlyVisibleComponents = entries.filter((e) => e.isIntersecting);
 
       if (mainlyVisibleComponents.length > 0) {
