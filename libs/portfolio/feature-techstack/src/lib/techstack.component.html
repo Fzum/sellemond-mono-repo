@@ -1,4 +1,4 @@
-<section class="text-gray-400 bg-gray-800 body-font">
+<section class="text-gray-400 bg-gray-900 body-font">
   <div class="container px-5 py-24 mx-auto flex flex-wrap justify-center">
     <div class="flex flex-col text-center w-full mb-20">
       <h2 class="text-xs text-indigo-400 tracking-widest font-medium title-font mb-1">A winning Stack makes a winning team!</h2>
@@ -7,10 +7,10 @@
 
     <div class="flex gap-5">
       <div *ngFor="let t of techstackFacade.technologies$ | async"
-           class="group max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-900">
+           class="group max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
 
         <div class="flex justify-center -mt-16 md:justify-end">
-          <div class="group-hover:animate-spin border-2 border-indigo-500 dark:border-indigo-400 rounded-full">
+          <div class="transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 group-hover:bg-indigo-700 duration-300 border-2 border-indigo-500 dark:border-indigo-400 rounded-full">
             <img class="p-2 group-hover:contrast-150 object-cover w-20 h-20" alt="technology-icon" [src]="t.imgUrl">
           </div>
         </div>
