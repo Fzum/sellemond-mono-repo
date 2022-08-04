@@ -7,11 +7,11 @@
 
     <div class="flex gap-5">
       <div *ngFor="let t of techstackFacade.technologies$ | async"
-           class="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-900">
+           class="group max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-900">
 
         <div class="flex justify-center -mt-16 md:justify-end">
-          <div class=" border-2 border-indigo-500 dark:border-indigo-400 rounded-full">
-            <img class="p-2 hover:contrast-150 object-cover w-20 h-20" alt="technology-icon" [src]="t.imgUrl">
+          <div class="group-hover:animate-spin border-2 border-indigo-500 dark:border-indigo-400 rounded-full">
+            <img class="p-2 group-hover:contrast-150 object-cover w-20 h-20" alt="technology-icon" [src]="t.imgUrl">
           </div>
         </div>
         <h2 class="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">{{ t.title }}</h2>
