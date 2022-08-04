@@ -5,7 +5,7 @@
       <h1 class="sm:text-3xl text-2xl font-medium title-font text-white">My main tech stack</h1>
     </div>
 
-    <div class="flex gap-5">
+    <div class="flex flex-wrap gap-5">
       <div *ngFor="let t of techstackFacade.technologies$ | async"
            class="group max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
 
