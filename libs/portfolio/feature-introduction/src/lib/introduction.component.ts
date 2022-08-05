@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IntroductionFacade } from '@sellemond/portfolio/domain';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -10,7 +11,16 @@ import { IntroductionFacade } from '@sellemond/portfolio/domain';
   styleUrls: ['./introduction.component.scss'],
 })
 export class IntroductionComponent implements OnInit {
-  constructor(private introductionFacade: IntroductionFacade) {}
+  constructor(
+    public introductionFacade: IntroductionFacade,
+    private sanitizer: DomSanitizer
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.introductionFacade.loadCareerEvents();
+  }
+
+  sanitize(svgHtml: string | undefined) {
+    return this.sanitizer.bypassSecurityTrustHtml(svgHtml ?? '');
+  }
 }
