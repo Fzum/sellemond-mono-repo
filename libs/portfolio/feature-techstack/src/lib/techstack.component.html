@@ -5,9 +5,9 @@
       <h1 class="sm:text-3xl text-2xl font-medium title-font text-white">My main tech stack</h1>
     </div>
 
-    <div class="flex flex-wrap gap-5">
+    <div class="flex flex-wrap gap-5" xyz="fade small stagger">
       <div *ngFor="let t of techstackFacade.technologies$ | async"
-           class="group max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+           class="group max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800 xyz-in">
 
         <div class="flex justify-center -mt-16 md:justify-end">
           <div class="transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 group-hover:bg-indigo-700 duration-300 border-2 border-indigo-500 dark:border-indigo-400 rounded-full">

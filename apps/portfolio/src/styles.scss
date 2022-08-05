@@ -1,8 +1,11 @@
+@import '@animxyz/core';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
+@include xyz-core;
+@include xyz-utilities;
 
 html {
   scroll-behavior: smooth;
