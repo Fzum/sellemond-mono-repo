@@ -1,8 +1,9 @@
 import {
-  AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
   OnDestroy,
+  OnInit,
   ViewChild,
 } from '@angular/core';
 import { HeroComponent } from '@sellemond/portfolio/feature-hero';
@@ -13,18 +14,12 @@ import { ProjectsComponent } from '@sellemond/portfolio/feature-projects';
 import { NavigationItem } from './model/navigation-item.model';
 import { DomSanitizer } from '@angular/platform-browser';
 
-const options: IntersectionObserverInit = {
-  root: null, // from root of the page
-  rootMargin: '0px', // no margin from top bottom left right
-  threshold: 1, // as soon as the whole element is visible
-};
-
 @Component({
   selector: 'sellemond-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
+export class AppComponent implements OnDestroy, OnInit {
   title = 'portfolio';
   observer: IntersectionObserver | null = null;
 
@@ -81,19 +76,28 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     private sanitizer: DomSanitizer
   ) {}
 
-  ngAfterViewInit(): void {
-    this.observer = new IntersectionObserver((entries) => {
-      const mainlyVisibleComponents = entries.filter((e) => e.isIntersecting);
+  @HostListener('window:scroll', ['$event']) // for window scroll events
+  onScroll() {
+    const isYOffsetInBetween = (curr: ElementRef, prev: ElementRef) =>
+      window.scrollY >= curr.nativeElement.offsetTop &&
+      window.scrollY < prev.nativeElement.offsetTop;
 
-      if (mainlyVisibleComponents.length > 0) {
-        this.currentlyVisibleComponentId = mainlyVisibleComponents[0].target.id;
-      }
-    }, options);
+    if (isYOffsetInBetween(this.heroEl, this.techStackEl)) {
+      this.currentlyVisibleComponentId = this.heroNavigationItem.componentId;
+    } else if (isYOffsetInBetween(this.techStackEl, this.intronEl)) {
+      this.currentlyVisibleComponentId =
+        this.techstackNavigationItem.componentId;
+    } else if (isYOffsetInBetween(this.intronEl, this.projectsEl)) {
+      this.currentlyVisibleComponentId =
+        this.introductionNavigationItem.componentId;
+    } else if (window.scrollY > this.projectsEl.nativeElement.offsetTop) {
+      this.currentlyVisibleComponentId =
+        this.projectsNavigationItem.componentId;
+    }
+  }
 
-    this.observer.observe(this.heroEl.nativeElement);
-    this.observer.observe(this.techStackEl.nativeElement);
-    this.observer.observe(this.intronEl.nativeElement);
-    this.observer.observe(this.projectsEl.nativeElement);
+  ngOnInit(): void {
+    this.currentlyVisibleComponentId = this.heroNavigationItem.componentId;
   }
 
   ngOnDestroy(): void {
