@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { HeroComponent } from '@sellemond/portfolio/feature-hero';
 import { IntroductionComponent } from '@sellemond/portfolio/feature-introduction';
 import { ProjectsComponent } from '@sellemond/portfolio/feature-projects';
-import {TechstackComponent} from "@sellemond/portfolio/feature-techstack";
+import { TechstackComponent } from '@sellemond/portfolio/feature-techstack';
+import { UiFooterComponent } from '../../../../libs/shared/ui-components/src/lib/ui-footer/ui-footer.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import {TechstackComponent} from "@sellemond/portfolio/feature-techstack";
     IntroductionComponent,
     ProjectsComponent,
     TechstackComponent,
+    UiFooterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
