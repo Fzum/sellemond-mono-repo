@@ -7,7 +7,8 @@
         <nav class="sticky top-6">
           <a *ngFor="let i of navigationItems"
              [ngClass]="{ 'dark:text-gray-50': currentlyVisibleComponentId === i.componentId }"
-             class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+             class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md
+              dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
              (click)="viewPortScroller.scrollToAnchor(i.componentId)">
             <div [innerHTML]="sanitize(i.svgHtml)"></div>
             <span class="mx-4 font-medium">{{ i.title }}</span>
@@ -17,10 +18,11 @@
     </div>
   </section>
   <section
-    class="block lg:hidden sticky top-0 z-50 flex flex-wrap justify-between px-10 py-4 border-b dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+    class="block lg:hidden sticky top-0 z-50 flex flex-wrap justify-between px-10 py-4 border-b dark:bg-gray-800
+    dark:border-gray-600 dark:text-gray-400">
     <div (click)="viewPortScroller.scrollToAnchor(i.componentId)"
          *ngFor="let i of navigationItems"
-         class="flex items-center gap-2"
+         class="flex items-center gap-2 cursor-pointer"
          [ngClass]="{ 'dark:text-gray-200': currentlyVisibleComponentId === i.componentId }">
       <div [innerHTML]="sanitize(i.svgHtml)"></div>
       <span>{{ i.title }}</span>
