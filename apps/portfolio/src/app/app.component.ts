@@ -3,7 +3,6 @@ import {
   ElementRef,
   HostListener,
   OnDestroy,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { HeroComponent } from '@sellemond/portfolio/feature-hero';
@@ -19,7 +18,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnDestroy, OnInit {
+export class AppComponent implements OnDestroy {
   title = 'portfolio';
   observer: IntersectionObserver | null = null;
 
@@ -63,7 +62,7 @@ export class AppComponent implements OnDestroy, OnInit {
     this.projectsNavigationItem,
   ];
 
-  currentlyVisibleComponentId = '';
+  currentlyVisibleComponentId = this.heroNavigationItem.componentId;
 
   @ViewChild(HeroComponent, { read: ElementRef }) heroEl!: ElementRef;
   @ViewChild(TechstackComponent, { read: ElementRef }) techStackEl!: ElementRef;
@@ -94,10 +93,6 @@ export class AppComponent implements OnDestroy, OnInit {
       this.currentlyVisibleComponentId =
         this.projectsNavigationItem.componentId;
     }
-  }
-
-  ngOnInit(): void {
-    this.currentlyVisibleComponentId = this.heroNavigationItem.componentId;
   }
 
   ngOnDestroy(): void {
