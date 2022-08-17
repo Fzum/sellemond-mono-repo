@@ -1,4 +1,4 @@
-<div class="flex">
+<div class="flex flex-col lg:flex-row">
   <section class="hidden lg:block">
     <div class="flex flex-col w-64 h-full px-4 py-8 bg-white border-r dark:bg-gray-800 dark:border-gray-600">
       <h2 class="text-3xl font-semibold text-gray-800 dark:text-white">Portfolio</h2>
@@ -15,6 +15,12 @@
         </nav>
       </div>
     </div>
+  </section>
+  <section
+    class="block lg:hidden sticky top-0 z-50 flex flex-wrap justify-between px-10 py-4 border-b dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+    <span [ngClass]="{ 'border-b border-gray-300': currentlyVisibleComponentId === i.componentId }"
+          (click)="viewPortScroller.scrollToAnchor(i.componentId)"
+          *ngFor="let i of navigationItems">{{ i.title }}</span>
   </section>
   <section class="w-full">
     <portfolio-hero [id]="heroNavigationItem.componentId"></portfolio-hero>
