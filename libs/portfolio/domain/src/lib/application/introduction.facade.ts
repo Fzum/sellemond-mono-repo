@@ -27,6 +27,7 @@ export class IntroductionFacade {
   loadCareerEvents() {
     this.careerEvents$.next([
       {
+        uuid: 'wordpress',
         yearStart: 2013,
         yearEnd: 2016,
         title: 'Several WordPress Implementations',
@@ -35,6 +36,7 @@ export class IntroductionFacade {
         svgHtml: wordpressSvg,
       },
       {
+        uuid: 'bachelor',
         yearStart: 2015,
         yearEnd: 2017,
         title: 'Bachelor of Science in IT & Telecommunication',
@@ -43,6 +45,7 @@ export class IntroductionFacade {
         svgHtml: graduationSvg,
       },
       {
+        uuid: 'brz',
         yearStart: 2017,
         yearEnd: 2020,
         title: 'Bundesrechenzentrum GmbH',
@@ -52,6 +55,7 @@ export class IntroductionFacade {
         svgHtml: brzSvg,
       },
       {
+        uuid: 'master',
         yearStart: 2018,
         yearEnd: 2020,
         title: 'Master of Science in Software Engineering',
@@ -61,6 +65,7 @@ export class IntroductionFacade {
         svgHtml: graduationSvg,
       },
       {
+        uuid: 'adesso',
         yearStart: 2020,
         yearEnd: 2022,
         title: 'adesso Austria GmbH',

@@ -25,7 +25,7 @@ export class TechstackComponent implements OnInit, AfterViewInit, OnDestroy {
       .pipe(
         map((t) => t.map((tt) => `#${tt.uuid}`)),
         filter((uuid) => uuid.length > 0),
-        map((uuid) => uuid.join(', '))
+        map((uuid) => uuid.join())
       )
       .subscribe((delimitedIds) => {
         const technologieCards = document.querySelectorAll(delimitedIds);
