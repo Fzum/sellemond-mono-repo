@@ -17,7 +17,7 @@
               class="flex-shrink-0 w-24 h-24 bg-gray-900 text-indigo-400 rounded-full inline-flex items-center justify-center" [innerHTML]="sanitize(c.svgHtml)">
             </div>
           </div>
-          <div [id]="'description-' + c.uuid" xyz="small-100% origin-center stagger" class="flex-grow sm:pl-6 mt-6 sm:mt-0 w-full">
+          <div [id]="'description-' + c.uuid" xyz="fade down-100% back-5 stagger" class="flex-grow sm:pl-6 mt-6 sm:mt-0 w-full">
             <h2 class="invisible font-medium title-font text-white mb-1 text-xl">{{ c.title }}</h2>
             <div class="invisible leading-relaxed" [innerHTML]="c.descriptionHtml"></div>
           </div>
