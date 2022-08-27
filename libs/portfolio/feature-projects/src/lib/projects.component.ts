@@ -11,8 +11,6 @@ import { UiCardComponent } from '../../../../shared/ui-components/src/lib/ui-car
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  projects = [1, 2, 3, 4, 5];
-
   constructor(public projectsFacade: ProjectsFacade) {}
 
   ngOnInit() {
