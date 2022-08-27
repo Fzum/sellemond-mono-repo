@@ -1,5 +1,7 @@
-<section class="bg-white dark:bg-gray-800 p-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
-  <components-ui-card [isAnimatedBackground]="true" *ngFor="let p of projectsFacade.projects$ | async">
+<section class="bg-white dark:bg-gray-800 p-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10"
+         xyz="fade small stagger">
+  <components-ui-card [isAnimatedBackground]="true" *ngFor="let p of projectsFacade.projects$ | async"
+                      [id]="p.uuid" class="invisible">
     <h1 class="text-xl font-semibold text-gray-800 dark:text-white">{{ p.title }}</h1>
 
     <div class="text-gray-700 dark:text-gray-400 flex flex-col gap-4 py-4">
