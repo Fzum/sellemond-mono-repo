@@ -1,5 +1,6 @@
 <div
-  [ngClass]=" { 'hover:rotate-2 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-indigo-500 hover:shadow-md': isAnimated }"
+  [ngClass]=" { 'hover:rotate-2 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300': isAnimatedScale || isAnimatedAll,
+   'hover:shadow-indigo-500 hover:shadow-md': isAnimatedBackground || isAnimatedAll}"
   class="max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
   <img class="object-cover object-center w-full h-56" [src]="imgUrl" alt="avatar">
 

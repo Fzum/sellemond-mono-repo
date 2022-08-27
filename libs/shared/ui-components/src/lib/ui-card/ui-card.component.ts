@@ -16,7 +16,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class UiCardComponent implements OnInit {
   @Input() imgUrl = 'https://picsum.photos/400/300';
-  @Input() isAnimated = false;
+  @Input() isAnimatedAll = false;
+  @Input() isAnimatedScale = false;
+  @Input() isAnimatedBackground = false;
   @Input() cardStatus: CardStatus | undefined;
 
   constructor(private sanitizer: DomSanitizer) {}
