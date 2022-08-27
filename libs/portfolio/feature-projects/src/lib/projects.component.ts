@@ -13,7 +13,9 @@ import { UiCardComponent } from '../../../../shared/ui-components/src/lib/ui-car
 export class ProjectsComponent implements OnInit {
   projects = [1, 2, 3, 4, 5];
 
-  constructor(private projectsFacade: ProjectsFacade) {}
+  constructor(public projectsFacade: ProjectsFacade) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.projectsFacade.loadProjects();
+  }
 }

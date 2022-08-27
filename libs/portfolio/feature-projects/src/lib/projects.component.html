@@ -1,8 +1,16 @@
-<section class="bg-white dark:bg-gray-900 p-14 flex flex-col xl:flex-row xl:flex-wrap">
-  <components-ui-card *ngFor="let p of projects" class="xl:basis-1/2 2xl:basis-1/3">
-    <h1 class="text-xl font-semibold text-gray-800 dark:text-white">{{ p }}</h1>
+<section class="bg-white dark:bg-gray-800 p-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
+  <components-ui-card *ngFor="let p of projectsFacade.projects$ | async">
+    <h1 class="text-xl font-semibold text-gray-800 dark:text-white">{{ p.title }}</h1>
 
-    <p class="py-2 text-gray-700 dark:text-gray-400">Senior Full Stack Engineer since 2017 with a passion for good software design and hip hop music.</p>
+    <div class="text-gray-700 dark:text-gray-400 flex flex-col gap-4 py-4">
+      <div>
+        <p class="text-base underline mb-1">Fachlich</p>
+        <p [innerHTML]="p.descriptionHtml.domain"></p>
+      </div>
+      <div>
+        <p class="text-base underline mb-1">Technisch</p>
+        <p [innerHTML]="p.descriptionHtml.technical"></p>
+      </div>
+    </div>
   </components-ui-card>
 </section>
-
