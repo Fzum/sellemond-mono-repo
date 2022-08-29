@@ -2,7 +2,7 @@
   [ngClass]=" { 'hover:rotate-2 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300': isAnimatedScale || isAnimatedAll,
    'hover:shadow-indigo-500 hover:shadow-md': isAnimatedBackground || isAnimatedAll}"
   class="max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-  <img class="object-cover object-center w-full h-56" [src]="imgUrl" alt="avatar">
+  <img *ngIf="imgUrl" class="object-cover object-center w-full h-56" [src]="imgUrl" alt="avatar">
 
   <div *ngIf="cardStatus" class="flex items-center px-6 py-3 bg-gray-700">
     <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"

@@ -15,10 +15,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiCardComponent implements OnInit {
-  @Input() imgUrl = 'https://picsum.photos/400/300';
   @Input() isAnimatedAll = false;
   @Input() isAnimatedScale = false;
   @Input() isAnimatedBackground = false;
+  @Input() imgUrl: string | undefined;
   @Input() cardStatus: CardStatus | undefined;
 
   constructor(private sanitizer: DomSanitizer) {}
