@@ -1,5 +1,5 @@
 export interface HeroContent {
   title: string;
-  description: string;
+  descriptionHtml: string;
   imageUrl: string;
 }

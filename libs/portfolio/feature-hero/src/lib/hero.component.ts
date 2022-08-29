@@ -28,7 +28,7 @@ export class HeroComponent implements OnInit {
   }
 
   get description$() {
-    return this.extract((h) => h.description);
+    return this.extract((h) => h.descriptionHtml);
   }
 
   get imageUrl$() {
