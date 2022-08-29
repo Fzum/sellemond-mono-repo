@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -14,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './ui-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UiCardComponent implements OnInit {
+export class UiCardComponent {
   @Input() isAnimatedAll = false;
   @Input() isAnimatedScale = false;
   @Input() isAnimatedBackground = false;
@@ -22,8 +17,6 @@ export class UiCardComponent implements OnInit {
   @Input() cardStatus: CardStatus | undefined;
 
   constructor(private sanitizer: DomSanitizer) {}
-
-  ngOnInit(): void {}
 
   sanitize(svgHtml: string | undefined) {
     return this.sanitizer.bypassSecurityTrustHtml(svgHtml ?? '');
