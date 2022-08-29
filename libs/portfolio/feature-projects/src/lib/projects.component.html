@@ -1,18 +1,12 @@
-<section class="bg-white dark:bg-gray-800 p-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10"
+<section class="bg-white text-gray-400 dark:bg-gray-900 p-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10"
          xyz="fade small stagger">
-  <components-ui-card [isAnimatedBackground]="true" *ngFor="let p of projectsFacade.projects$ | async"
-                      [id]="p.uuid" class="invisible">
-    <h1 class="text-xl font-semibold text-gray-800 dark:text-white">{{ p.title }}</h1>
+  <div *ngFor="let p of projectsFacade.projects$ | async"
+       [id]="p.uuid"
+       class="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800 invisible">
 
-    <div class="text-gray-700 dark:text-gray-400 flex flex-col gap-4 py-4">
-      <div>
-        <p class="text-base underline mb-1">Fachlich</p>
-        <p [innerHTML]="p.descriptionHtml.domain"></p>
-      </div>
-      <div>
-        <p class="text-base underline mb-1">Technisch</p>
-        <p [innerHTML]="p.descriptionHtml.technical"></p>
-      </div>
-    </div>
-  </components-ui-card>
+    <h2 class="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">{{ p.title }}</h2>
+
+    <p class="mt-2 leading-relaxed text-base" [innerHTML]="p.descriptionHtml.domain"></p>
+    <p class="mt-2 leading-relaxed text-base" [innerHTML]="p.descriptionHtml.technical"></p>
+  </div>
 </section>
