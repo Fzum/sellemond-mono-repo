@@ -8,7 +8,8 @@ const description = `<p>I'm Fabian, a <span class="font-bold">Freelance Full Sta
   in 2017 while I was making my <span class="font-bold">Bachelor Studies in IT and Telecommunication</span>. Since then,
   I could gain comprehensive insights in different projects and teams of all sizes.</p> <br><p>To intensify my knowledge
   I started a <span class="font-bold">Masters program in Software Engineering</span> that I could successfully pass in
-  2020.</p><br><p>Take a look around to familiarize yourself with my competences and experiences.</p>`;
+  2020.</p><br><p>Take a look around to familiarize yourself with my competences and experiences and don't hesitate
+  contacting me when I could be a good fit in your team.</p>`;
 
 @Injectable({ providedIn: 'root' })
 export class HeroFacade {
