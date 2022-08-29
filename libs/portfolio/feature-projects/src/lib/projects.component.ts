@@ -39,7 +39,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
               }
             });
           },
-          { threshold: 0.5 }
+          { threshold: 0.3 }
         );
         technologieCards.forEach((card) => {
           this.projectCardIntersectionObserver?.observe(card);

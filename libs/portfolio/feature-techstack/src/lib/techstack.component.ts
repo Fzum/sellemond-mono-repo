@@ -38,7 +38,7 @@ export class TechstackComponent implements OnInit, AfterViewInit, OnDestroy {
               }
             });
           },
-          { threshold: 0.5 }
+          { threshold: 0.3 }
         );
         technologieCards.forEach((card) => {
           this.technologyCardIntersectionObserver?.observe(card);
