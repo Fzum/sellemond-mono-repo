@@ -7,6 +7,7 @@ export interface Framework {
 }
 
 export interface TechstackItemDescription {
+  uuid: string;
   category: string;
   title: string;
   iconUrl: string;

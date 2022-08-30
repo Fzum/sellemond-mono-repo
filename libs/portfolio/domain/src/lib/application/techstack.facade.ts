@@ -45,35 +45,41 @@ export class TechstackFacade {
             'Since 2017 I have been mostly developing in the following languages.',
           items: [
             {
+              uuid: 'java',
               category: 'Backend',
               title: 'Java',
               iconUrl: 'https://www.vectorlogo.zone/logos/java/java-icon.svg',
             },
             {
+              uuid: 'kotlin',
               category: 'Backend',
               title: 'Kotlin',
               iconUrl:
                 'https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg',
             },
             {
-              category: 'Frontend Logic',
+              uuid: 'typescript',
+              category: 'Frontend',
               title: 'Typescript',
               iconUrl:
                 'https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg',
             },
             {
-              category: 'Frontend Structure',
+              uuid: 'html',
+              category: 'Frontend',
               title: 'HTML',
               iconUrl:
                 'https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg',
             },
             {
-              category: 'Frontend Design',
+              uuid: 'css',
+              category: 'Frontend',
               title: 'CSS / SCSS',
               iconUrl:
                 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg',
             },
             {
+              uuid: 'sql',
               category: 'Database',
               title: 'SQL',
               iconUrl:

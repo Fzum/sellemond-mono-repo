@@ -5,9 +5,10 @@
   </div>
 
   <div class="mt-8 sm:mt-12">
-    <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3" xyz="fade down-100% back-5 stagger-2.5">
       <div *ngFor="let i of iconGridItem.items"
-           class="hover:bg-gray-800 flex flex-col px-4 py-8 text-center border border-gray-100 rounded-lg dark:border-gray-800 gap-4">
+           [id]="i.uuid"
+           class="invisible hover:shadow-sm hover:shadow-indigo-500 hover:bg-gray-900 bg-gray-800 flex flex-col px-4 py-8 text-center border border-gray-100 rounded-lg dark:border-gray-800 gap-4">
         <dt class="order-last text-lg font-medium text-gray-500 dark:text-gray-400">
           {{ i.category }}
         </dt>
