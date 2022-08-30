@@ -5,6 +5,7 @@ import {
   Input,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconGridItem } from './ui-icon-grid.model';
 
 @Component({
   selector: 'components-ui-icon-grid',
@@ -43,17 +44,4 @@ export class UiIconGridComponent implements AfterViewInit {
       this.gridItemIntersectionObserver?.observe(card);
     });
   }
-}
-
-export interface IconGridItemDescription {
-  uuid: string;
-  category: string;
-  title: string;
-  iconUrl: string;
-}
-
-export interface IconGridItem {
-  heading: string;
-  description: string;
-  items: IconGridItemDescription[];
 }

@@ -2,10 +2,8 @@ import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TechstackFacade } from '@sellemond/portfolio/domain';
 import { filter, map, Observable, Subscription } from 'rxjs';
-import {
-  IconGridItem,
-  UiIconGridComponent,
-} from '@sellemond/shared/ui-components';
+import { UiIconGridComponent } from '@sellemond/shared/ui-components';
+import { IconGridItem } from '@sellemond/shared/ui-components';
 
 @Component({
   standalone: true,
