@@ -1,10 +1,10 @@
 <header class="bg-white dark:bg-gray-800">
   <div class="container px-6 py-16 mx-auto">
-    <div class="items-center lg:flex">
+    <div class="items-center lg:flex text-gray-800 dark:text-gray-200">
       <div class="w-full lg:w-1/2">
         <div class="lg:max-w-lg">
           <h1 class="text-2xl font-semibold text-gray-800 uppercase dark:text-white lg:text-3xl">{{ title }}</h1>
-          <p class="mt-2 text-gray-600 dark:text-gray-400" [innerHTML]="descriptionHtml"></p>
+          <p class="mt-2 " [innerHTML]="descriptionHtml"></p>
         </div>
       </div>
       <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
@@ -12,19 +12,16 @@
           [cardStatus]="cardStatus"
           [isAnimatedAll]="true"
           [imgUrl]="'https://media-exp1.licdn.com/dms/image/C4D03AQFsgIYZd2DWGA/profile-displayphoto-shrink_800_800/0/1584558533635?e=1665014400&v=beta&t=vmlQgzK_CZq2ANJ_gh2p5MCst1CK_-lAKuZbmIPpsHQ'">
-          <h1 class="text-xl font-semibold text-gray-900 dark:text-white">Sellemond Fabian</h1>
+          <h1 class="text-xl font-semibold ">Sellemond Fabian</h1>
 
-          <div class="text-gray-800 dark:text-gray-200">
-            <p class="py-2 ">Senior Full Stack Software Engineer since 2017 with a passion for good software design and
-              hip hop music.</p>
+          <p class="py-2 ">Senior Full Stack Software Engineer since 2017 with a passion for good software design and
+            hip hop music.</p>
 
-            <div *ngFor="let i of heroCardPersonInfoItems" class="flex items-center mt-4">
-              <div [innerHTML]="sanitize(i.svgHtml)"></div>
+          <div *ngFor="let i of heroCardPersonInfoItems" class="flex items-center mt-4">
+            <div [innerHTML]="sanitize(i.svgHtml)"></div>
 
-              <h1 class="px-2 text-sm">{{ i.title }}</h1>
-            </div>
+            <h1 class="px-2 text-sm">{{ i.title }}</h1>
           </div>
-
         </components-ui-card>
       </div>
     </div>
