@@ -1,19 +1,21 @@
-<section class="text-gray-400 bg-gray-800 body-font">
+<section class="text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 body-font">
   <div class="container px-5 py-24 mx-auto flex flex-wrap">
     <ng-container *ngFor="let c of introductionFacade.careerEvents$ | async; let first = first">
       <div [class.pt-10]="first" class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
 
         <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-          <div class="h-full w-1 bg-gray-900 pointer-events-none"></div>
+          <div class="h-full w-1 bg-neutral-300 dark:bg-gray-900 pointer-events-none"></div>
         </div>
         <div
-          class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500
-          text-white relative z-10 title-font font-medium text-sm">
+          class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-gray-800
+          dark:bg-indigo-500 relative z-10 title-font font-medium text-sm">
         </div>
         <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
           <div class="flex items-center sm:gap-6">
             <div
-              class="flex-shrink-0 w-24 h-24 bg-gray-900 text-indigo-400 rounded-full inline-flex items-center justify-center" [innerHTML]="sanitize(c.svgHtml)">
+              class="flex-shrink-0 w-24 h-24 bg-neutral-300 dark:bg-gray-900 text-gray-900 dark:text-indigo-500
+              rounded-full inline-flex items-center justify-center"
+              [innerHTML]="sanitize(c.svgHtml)">
             </div>
             <span class="hidden sm:block">{{ c.yearStart }} {{ c.yearEnd }}</span>
           </div>
