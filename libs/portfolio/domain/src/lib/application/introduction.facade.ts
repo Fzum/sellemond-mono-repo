@@ -32,7 +32,7 @@ export class IntroductionFacade {
         yearEnd: 2016,
         title: 'Several WordPress Implementations',
         descriptionHtml:
-          '<p>Starting with an internship in 2013 in London, UK I gained some experience in WordPress Development. I worked on several implementations, including websites for\n    <a class="text-indigo-800 dark:text-indigo-400" target="_blank" href="https://www.fashionvisavis.com/">Fashion Vis a Vis</a>,\n    <a class="text-indigo-800 dark:text-indigo-400" target="_blank" href="http://www.kunstraum-sellemond.com/">Kunstraum Sellemond</a> and \n    <a class="text-indigo-800 dark:text-indigo-400" target="_blank" href="https://blightycafe.co.uk/">Blight Cafe</a>.\n</p>',
+          '<p>Starting with an internship in 2013 in London, UK I gained some experience in WordPress Development. I worked on several implementations, including websites for\n    <a class="text-accent-light dark:text-accent-dark" target="_blank" href="https://www.fashionvisavis.com/">Fashion Vis a Vis</a>,\n    <a class="text-accent-light dark:text-accent-dark" target="_blank" href="http://www.kunstraum-sellemond.com/">Kunstraum Sellemond</a> and \n    <a class="text-accent-light dark:text-accent-dark" target="_blank" href="https://blightycafe.co.uk/">Blight Cafe</a>.\n</p>',
         svgHtml: wordpressSvg,
       },
       {
@@ -41,7 +41,7 @@ export class IntroductionFacade {
         yearEnd: 2017,
         title: 'Bachelor of Science in IT & Telecommunication',
         descriptionHtml:
-          'In 2017, I finished my Bachelor Studies in IT & Telecommunications at the university of applied science <a class="text-indigo-800 dark:text-indigo-400" target="_blank" href="https://www.fh-campuswien.ac.at/">FH Campus Wien</a> in Vienna.',
+          'In 2017, I finished my Bachelor Studies in IT & Telecommunications at the university of applied science <a class="text-accent-light dark:text-accent-dark" target="_blank" href="https://www.fh-campuswien.ac.at/">FH Campus Wien</a> in Vienna.',
         svgHtml: graduationSvg,
       },
       {
@@ -51,7 +51,7 @@ export class IntroductionFacade {
         title: 'Bundesrechenzentrum GmbH',
         descriptionHtml:
           'In 2017, I started as an intern at the <a\n' +
-          '           class="text-indigo-800 dark:text-indigo-400" target="_blank" href="https://www.brz.gv.at/">Bundesrechenzentrum GmbH</a>, which marks my beginning of professional Java development.',
+          '           class="text-accent-light dark:text-accent-dark" target="_blank" href="https://www.brz.gv.at/">Bundesrechenzentrum GmbH</a>, which marks my beginning of professional Java development.',
         svgHtml: brzSvg,
       },
       {
@@ -61,7 +61,7 @@ export class IntroductionFacade {
         title: 'Master of Science in Software Engineering',
         descriptionHtml:
           'While I was already working professionally as fullstack software engineer at <a\n' +
-          '           class="text-indigo-800 dark:text-indigo-400" target="_blank" href="https://www.brz.gv.at/">Bundesrechenzentrum GmbH</a> I started my master studies for software engineering at the university of applied science <a class="text-indigo-800 dark:text-indigo-400" target="_blank" href="https://www.technikum-wien.at/">FH Technikum Wien</a> and completed in 2020.',
+          '           class="text-accent-light dark:text-accent-dark" target="_blank" href="https://www.brz.gv.at/">Bundesrechenzentrum GmbH</a> I started my master studies for software engineering at the university of applied science <a class="text-accent-light dark:text-accent-dark" target="_blank" href="https://www.technikum-wien.at/">FH Technikum Wien</a> and completed in 2020.',
         svgHtml: graduationSvg,
       },
       {
@@ -70,7 +70,7 @@ export class IntroductionFacade {
         yearEnd: 2022,
         title: 'adesso Austria GmbH',
         descriptionHtml:
-          '2020 I started working for <a class="text-indigo-800 dark:text-indigo-400" target="_blank" href="https://www.adesso.at/de_at/index-2.jsp">adesso Austria GmbH</a> as fullstack software engineer.',
+          '2020 I started working for <a class="text-accent-light dark:text-accent-dark" target="_blank" href="https://www.adesso.at/de_at/index-2.jsp">adesso Austria GmbH</a> as fullstack software engineer.',
         svgHtml: adessoSvg,
       },
     ]);

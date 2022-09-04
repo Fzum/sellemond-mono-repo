@@ -1,20 +1,21 @@
 <div class="px-4 py-12 mx-auto max-w-screen-xl md:py-16 sm:px-6 lg:px-8">
   <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">{{ iconGridItem.heading }}</h2>
-    <p class="mt-4 text-gray-500 dark:text-gray-400 sm:text-xl">{{ iconGridItem.description }}</p>
+    <h2 class="text-3xl font-bold text-primary-light-900 dark:text-primary-dark-50 sm:text-4xl">{{ iconGridItem.heading }}</h2>
+    <p class="mt-4 text-primary-light-500 dark:text-primary-dark-400 sm:text-xl">{{ iconGridItem.description }}</p>
   </div>
 
   <div class="mt-8 sm:mt-12">
     <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3" xyz="fade down-100% back-5 stagger-2.5">
       <div *ngFor="let i of iconGridItem.items"
            [id]="i.uuid"
-           class="hover:justify-center invisible bg-neutral-100 dark:bg-gray-800 hover:border-indigo-500 dark:hover:border-indigo-500
-           flex flex-col px-4 py-8 text-center border border-gray-100 rounded-lg dark:border-gray-600 gap-4">
-        <dt class=" order-last text-lg font-medium text-gray-500 dark:text-gray-400">
+           class="hover:justify-center invisible bg-base-light-a dark:bg-base-dark-a hover:border-accent-light
+           dark:hover:border-accent-dark flex flex-col px-4 py-8 text-center border border-primary-light-100
+           dark:border-primary-dark-600 rounded-lg gap-4">
+        <dt class=" order-last text-lg font-medium text-primary-light-500 dark:text-primary-dark-400">
           {{ i.category }}
         </dt>
 
-        <dd class="text-4xl font-bold text-indigo-600 md:text-5xl flex flex-col gap-5 items-center">
+        <dd class="text-4xl font-bold text-accent-light dark:text-accent-dark md:text-5xl flex flex-col gap-5 items-center">
           <span>{{ i.title }}</span>
           <img class="h-20 w-20" [src]="i.iconUrl" alt="java">
         </dd>

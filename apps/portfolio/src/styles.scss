@@ -10,3 +10,22 @@
 html {
   scroll-behavior: smooth;
 }
+
+@layer base {
+  :root {
+    --color-primary-light: theme('colors.gray.50');
+    --color-primary-dark: theme('colors.gray.900');
+
+    --color-accent-light: theme('colors.cyan.500');
+    --color-accent-dark: theme('colors.cyan.900');
+
+    --color-base-light-a: theme('colors.gray.200');
+    --color-base-dark-a: theme('colors.gray.800');
+
+    --color-base-light-b: theme('colors.gray.300');
+    --color-base-dark-b: theme('colors.gray.900');
+
+    --color-text-light: theme('colors.gray.800');
+    --color-text-dark: theme('colors.gray.100');
+  }
+}

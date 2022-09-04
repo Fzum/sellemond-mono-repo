@@ -1,6 +1,6 @@
 <div
   [ngClass]=" { 'hover:rotate-2 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300': isAnimatedScale || isAnimatedAll,
-   'hover:shadow-indigo-500 hover:shadow-md': isAnimatedBackground || isAnimatedAll}"
+   'hover:shadow-accent-dark hover:shadow-md': isAnimatedBackground || isAnimatedAll}"
   class="max-w-sm mx-auto overflow-hidden rounded-lg shadow-lg">
   <img *ngIf="imgUrl" class="object-cover object-center w-full h-56" [src]="imgUrl" alt="avatar">
 
@@ -12,7 +12,7 @@
     <h1 class="mx-3 text-lg font-semibold">{{ cardStatus.label }}</h1>
   </div>
 
-  <div class="px-6 py-4 bg-neutral-300 dark:bg-gray-900">
+  <div class="px-6 py-4 bg-base-light-b dark:bg-base-dark-b">
     <ng-content></ng-content>
   </div>
 </div>

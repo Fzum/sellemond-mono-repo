@@ -1,21 +1,21 @@
 <div class="flex flex-col lg:flex-row">
   <section class="hidden lg:block sticky top-0 h-screen">
-    <div class="flex flex-col w-64 h-full px-4 py-8 bg-white border-r dark:bg-gray-800 dark:border-gray-600">
-      <h2 class="text-3xl font-semibold text-gray-800 dark:text-white">Portfolio</h2>
+    <div class="flex flex-col w-64 h-full px-4 py-8 bg-base-light-b dark:bg-base-dark-b border-r border-accent-light dark:border-accent-dark">
+      <h2 class="text-3xl font-semibold text-text-light dark:text-text-dark">Portfolio</h2>
 
       <div class="flex flex-col justify-between flex-1 mt-6">
         <nav>
           <a *ngFor="let i of navigationItems"
-             [ngClass]="{ 'dark:text-gray-50': currentlyVisibleComponentId === i.componentId }"
-             class="flex items-center px-4 py-2 mt-5 text-gray-600 dark:text-gray-400 transition-colors duration-200 transform rounded-md
-               hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+             [ngClass]="{ 'underline decoration-accent-light dark:decoration-accent-dark': currentlyVisibleComponentId === i.componentId }"
+             class="flex items-center px-4 py-2 mt-5 text-text-light dark:text-text-dark transition-colors duration-200
+              transform rounded-md hover:bg-accent-light dark:hover:bg-accent-dark"
              (click)="viewPortScroller.scrollToAnchor(i.componentId)">
             <div [innerHTML]="sanitize(i.svgHtml)"></div>
             <span class="mx-4 font-medium">{{ i.title }}</span>
           </a>
         </nav>
       </div>
-      <div class="flex justify-between items-center w-full text-gray-600 dark:text-gray-400">
+      <div class="flex justify-between items-center w-full text-text-light dark:text-text-dark">
         <div class="flex justify-center items-center space-x-2">
           <div>
             <img class="h-10 w-10 rounded-full"
@@ -42,12 +42,12 @@
     </div>
   </section>
   <section
-    class="block lg:hidden sticky top-0 z-50 flex flex-wrap justify-between px-10 py-4 border-b bg-white dark:bg-gray-800
-    dark:border-gray-600 dark:text-gray-400">
+    class="block lg:hidden sticky top-0 z-50 flex flex-wrap justify-between px-10 py-4 border-b
+    bg-base-light-a dark:bg-base-dark-a dark:border-accent-dark dark:text-text-dark">
     <div (click)="viewPortScroller.scrollToAnchor(i.componentId)"
          *ngFor="let i of navigationItems"
          class="flex items-center gap-2 cursor-pointer"
-         [ngClass]="{ 'dark:text-gray-200': currentlyVisibleComponentId === i.componentId }">
+         [ngClass]="{ 'underline decoration-accent-light dark:decoration-accent-dark': currentlyVisibleComponentId === i.componentId }">
       <div [innerHTML]="sanitize(i.svgHtml)"></div>
       <span>{{ i.title }}</span>
     </div>

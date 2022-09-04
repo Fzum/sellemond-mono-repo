@@ -1,24 +1,27 @@
-<section class="bg-neutral-300 dark:bg-gray-900">
+<section class="bg-base-light-b dark:bg-base-dark-b">
   <components-ui-icon-grid
     *ngFor="let i of iconGridItems$ | async"
     [iconGridItem]="i"
   ></components-ui-icon-grid>
 </section>
-<section class="text-gray-400 bg-neutral-300 dark:bg-gray-900 body-font">
+<section class="text-text-light dark:text-text-dark bg-base-light-b dark:bg-base-dark-b body-font">
   <div class="container px-5 py-24 mx-auto flex flex-wrap justify-center">
     <div class="flex flex-col text-center w-full mb-20">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">My go to combination of frameworks</h2>
-      <p class="mt-4 text-gray-500 dark:text-gray-400 sm:text-xl">A winning Stack makes a winning
+      <h2 class="text-3xl font-bold sm:text-4xl">My go to combination of frameworks</h2>
+      <p class="mt-4 sm:text-xl">A winning Stack makes a winning
         team!</p>
     </div>
 
     <div class="flex flex-wrap gap-5" xyz="fade small stagger">
       <div *ngFor="let t of frameworks$ | async"
            [id]="t.uuid"
-           class="group max-w-md px-8 py-4 mx-auto mt-16 bg-neutral-100 rounded-lg shadow-lg dark:bg-gray-800 invisible text-gray-800 dark:text-white">
+           class="group max-w-md px-8 py-4 mx-auto mt-16 bg-base-light-a dark:bg-base-dark-a rounded-lg shadow-lg invisible
+           text-text-light dark:text-text-dark">
 
         <div class="flex justify-center -mt-16 md:justify-end">
-          <div class="transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 group-hover:bg-indigo-700 duration-300 border-2 border-indigo-500 dark:border-indigo-400 rounded-full">
+          <div class="transition ease-in-out delay-150 group-hover:-translate-y-1
+          group-hover:scale-110 group-hover:dark:bg-accent-dark group-hover:bg-accent-light
+          duration-300 border-2 border-accent-light dark:border-accent-dark rounded-full">
             <img class="p-2 group-hover:contrast-150 object-cover w-20 h-20" alt="technology-icon" [src]="t.imgUrl">
           </div>
         </div>
@@ -27,7 +30,7 @@
         <p class="mt-2 leading-relaxed">{{ t.descriptionHtml }}</p>
 
         <div class="flex mt-4">
-          <a [href]="t.link" target="_blank" class="text-xl font-medium text-indigo-800 dark:text-indigo-400">{{ t.title }} website</a>
+          <a [href]="t.link" target="_blank" class="text-xl font-medium text-accent-light dark:text-accent-dark">{{ t.title }} website</a>
         </div>
       </div>
     </div>
