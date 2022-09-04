@@ -1,0 +1,24 @@
+<div class="px-4 py-12 mx-auto max-w-screen-xl md:py-16 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">{{ iconGridItem.heading }}</h2>
+    <p class="mt-4 text-gray-500 dark:text-gray-400 sm:text-xl">{{ iconGridItem.description }}</p>
+  </div>
+
+  <div class="mt-8 sm:mt-12">
+    <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3" xyz="fade down-100% back-5 stagger-2.5">
+      <div *ngFor="let i of iconGridItem.items"
+           [id]="i.uuid"
+           class="group hover:justify-center invisible hover:bg-gray-900 hover:border-indigo-500
+           bg-gray-800 flex flex-col px-4 py-8 text-center border border-gray-100 rounded-lg dark:border-gray-600 gap-4">
+        <dt class="md:group-hover:hidden order-last text-lg font-medium text-gray-500 dark:text-gray-400">
+          {{ i.category }}
+        </dt>
+
+        <dd class="text-4xl font-bold text-indigo-600 md:text-5xl flex flex-col gap-5 items-center">
+          <span class="md:group-hover:hidden">{{ i.title }}</span>
+          <img class="md:group-hover:animate-bounce md:group-hover:h-28 md:group-hover:w-28 h-20 w-20" [src]="i.iconUrl" alt="java">
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>

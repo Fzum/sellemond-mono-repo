@@ -1,28 +1,31 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TechstackFacade } from '@sellemond/portfolio/domain';
-import { filter, map, Subscription } from 'rxjs';
+import { filter, map, Observable, Subscription } from 'rxjs';
+import { UiIconGridComponent } from '@sellemond/shared/ui-components';
+import { IconGridItem } from '@sellemond/shared/ui-components';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, UiIconGridComponent],
   selector: 'portfolio-techstack',
   templateUrl: './techstack.component.html',
   styleUrls: ['./techstack.component.scss'],
 })
 export class TechstackComponent implements OnInit, AfterViewInit, OnDestroy {
-  constructor(public techstackFacade: TechstackFacade) {}
+  constructor(private techstackFacade: TechstackFacade) {}
 
   private technologyCardIntersectionObserver: IntersectionObserver | undefined;
   private techstackSub: Subscription | undefined;
 
   ngOnInit() {
-    this.techstackFacade.loadTechnologies();
+    this.techstackFacade.techStackSectionContent();
   }
 
   ngAfterViewInit(): void {
-    this.techstackSub = this.techstackFacade.technologies$
+    this.techstackSub = this.techstackFacade.techStackSectionContent$
       .pipe(
+        map((c) => c.frameworks),
         map((t) => t.map((tt) => `#${tt.uuid}`)),
         filter((uuid) => uuid.length > 0),
         map((uuid) => uuid.join())
@@ -49,5 +52,17 @@ export class TechstackComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     this.technologyCardIntersectionObserver?.disconnect();
     this.techstackSub?.unsubscribe();
+  }
+
+  get frameworks$() {
+    return this.techstackFacade.techStackSectionContent$.pipe(
+      map((c) => c.frameworks)
+    );
+  }
+
+  get iconGridItems$(): Observable<IconGridItem[]> {
+    return this.techstackFacade.techStackSectionContent$.pipe(
+      map((c) => c.techstackItems)
+    );
   }
 }
