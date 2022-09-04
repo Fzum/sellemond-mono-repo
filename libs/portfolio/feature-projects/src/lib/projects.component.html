@@ -1,11 +1,11 @@
-<section class="text-gray-800 dark:text-white bg-neutral-300 dark:bg-gray-900
-p-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10"
+<section class="text-text-light dark:text-text-dark bg-base-light-b dark:bg-base-dark-b p-14 grid grid-cols-1
+ md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10"
          xyz="fade small stagger">
   <div *ngFor="let p of projectsFacade.projects$ | async"
        [id]="p.uuid"
-       class="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800 invisible">
+       class="max-w-md px-8 py-4 mx-auto mt-16 rounded-lg shadow-lg invisible bg-base-light-a dark:bg-base-dark-a">
 
-    <h2 class="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">{{ p.title }}</h2>
+    <h2 class="mt-2 text-2xl font-semibold text-text-light dark:text-text-dark md:mt-0 md:text-3xl">{{ p.title }}</h2>
 
     <p class="mt-2 leading-relaxed text-base" [innerHTML]="p.descriptionHtml.domain"></p>
     <p class="mt-2 leading-relaxed text-base" [innerHTML]="p.descriptionHtml.technical"></p>
