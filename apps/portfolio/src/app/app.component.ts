@@ -103,7 +103,11 @@ export class AppComponent implements OnDestroy {
     return this.sanitizer.bypassSecurityTrustHtml(svgHtml ?? '');
   }
 
-  toggleDarkMode()  {
+  toggleDarkMode() {
     document.documentElement.classList.toggle('dark');
+  }
+
+  isDarkMode() {
+    return document.documentElement.classList.contains('dark');
   }
 }
