@@ -14,7 +14,7 @@ import { ProjectsComponent } from '@sellemond/portfolio/feature-projects';
 import { NavigationItem } from './model/navigation-item.model';
 import { DomSanitizer } from '@angular/platform-browser';
 
-const localStorageThemeKey = 'fs-portfolio-theme';
+const themeKey = 'fs-portfolio-theme';
 const darkThemeClass = 'dark';
 
 @Component({
@@ -104,8 +104,11 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private setTheme() {
-    if (localStorage.getItem(localStorageThemeKey) === darkThemeClass) {
-      document.documentElement.classList.add(darkThemeClass);
+    const isDarkThemeSet = localStorage.getItem(themeKey) === darkThemeClass;
+    const classList = document.documentElement.classList;
+
+    if (isDarkThemeSet && !classList.contains(darkThemeClass)) {
+      classList.add(darkThemeClass);
     }
   }
 
@@ -123,11 +126,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   enableDarkMode() {
     document.documentElement.classList.add(darkThemeClass);
-    localStorage.setItem(localStorageThemeKey, darkThemeClass);
+    localStorage.setItem(themeKey, darkThemeClass);
   }
 
   disableDarkMode() {
     document.documentElement.classList.remove(darkThemeClass);
-    localStorage.removeItem(localStorageThemeKey);
+    localStorage.removeItem(themeKey);
   }
 }
