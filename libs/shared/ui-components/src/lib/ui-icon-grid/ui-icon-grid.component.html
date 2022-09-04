@@ -8,8 +8,8 @@
     <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3" xyz="fade down-100% back-5 stagger-2.5">
       <div *ngFor="let i of iconGridItem.items"
            [id]="i.uuid"
-           class="group hover:justify-center invisible hover:bg-gray-900 hover:border-indigo-500
-           bg-gray-800 flex flex-col px-4 py-8 text-center border border-gray-100 rounded-lg dark:border-gray-600 gap-4">
+           class="hover:justify-center invisible bg-neutral-100 dark:bg-gray-800 hover:border-indigo-500 dark:hover:border-indigo-500
+           flex flex-col px-4 py-8 text-center border border-gray-100 rounded-lg dark:border-gray-600 gap-4">
         <dt class=" order-last text-lg font-medium text-gray-500 dark:text-gray-400">
           {{ i.category }}
         </dt>
