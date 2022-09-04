@@ -3,6 +3,7 @@ import {
   ElementRef,
   HostListener,
   OnDestroy,
+  OnInit,
   ViewChild,
 } from '@angular/core';
 import { HeroComponent } from '@sellemond/portfolio/feature-hero';
@@ -13,12 +14,15 @@ import { ProjectsComponent } from '@sellemond/portfolio/feature-projects';
 import { NavigationItem } from './model/navigation-item.model';
 import { DomSanitizer } from '@angular/platform-browser';
 
+const localStorageThemeKey = 'fs-portfolio-theme';
+const darkThemeClass = 'dark';
+
 @Component({
   selector: 'sellemond-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'portfolio';
   observer: IntersectionObserver | null = null;
 
@@ -95,6 +99,16 @@ export class AppComponent implements OnDestroy {
     }
   }
 
+  ngOnInit(): void {
+    this.setTheme();
+  }
+
+  private setTheme() {
+    if (localStorage.getItem(localStorageThemeKey) === darkThemeClass) {
+      document.documentElement.classList.add(darkThemeClass);
+    }
+  }
+
   ngOnDestroy(): void {
     this.observer?.disconnect();
   }
@@ -103,11 +117,17 @@ export class AppComponent implements OnDestroy {
     return this.sanitizer.bypassSecurityTrustHtml(svgHtml ?? '');
   }
 
-  toggleDarkMode() {
-    document.documentElement.classList.toggle('dark');
+  isDarkModeEnabled() {
+    return document.documentElement.classList.contains(darkThemeClass);
   }
 
-  isDarkMode() {
-    return document.documentElement.classList.contains('dark');
+  enableDarkMode() {
+    document.documentElement.classList.add(darkThemeClass);
+    localStorage.setItem(localStorageThemeKey, darkThemeClass);
+  }
+
+  disableDarkMode() {
+    document.documentElement.classList.remove(darkThemeClass);
+    localStorage.removeItem(localStorageThemeKey);
   }
 }
