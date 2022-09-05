@@ -29,7 +29,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
         map((uuid) => uuid.join())
       )
       .subscribe((delimitedIds) => {
-        const technologieCards = document.querySelectorAll(delimitedIds);
+        const projectCards = document.querySelectorAll(delimitedIds);
         this.projectCardIntersectionObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -41,7 +41,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
           },
           { threshold: 0.3 }
         );
-        technologieCards.forEach((card) => {
+        projectCards.forEach((card) => {
           this.projectCardIntersectionObserver?.observe(card);
         });
       });
