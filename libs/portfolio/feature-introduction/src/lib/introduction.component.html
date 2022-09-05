@@ -20,7 +20,7 @@
             <span class="hidden sm:block">{{ c.yearStart }} {{ c.yearEnd }}</span>
           </div>
           <div [id]="'description-' + c.uuid" xyz="fade down-100% back-5 stagger" class="flex-grow sm:pl-6 mt-6 sm:mt-0 w-full">
-            <h2 class="invisible font-medium title-font text-white mb-1 text-xl">{{ c.title }}</h2>
+            <h2 class="invisible font-medium title-font text-text-light dark:text-text-dark mb-1 text-xl">{{ c.title }}</h2>
             <div class="invisible leading-relaxed" [innerHTML]="c.descriptionHtml"></div>
           </div>
         </div>
