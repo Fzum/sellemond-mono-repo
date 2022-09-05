@@ -21,7 +21,7 @@ export class HeroFacade {
 
   loadHeroContent() {
     this.content$.next({
-      title: 'Hi there 👋',
+      title: 'Welcome!',
       descriptionHtml: description,
       imageUrl: 'https://merakiui.com/_nuxt/img/Catalogue-pana.32658f1.svg',
     });
