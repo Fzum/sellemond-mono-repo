@@ -1,11 +1,17 @@
 export interface Project {
   uuid: string;
   title: string;
-  descriptionHtml: ProjectDescriptionHtml;
+  info: ProjectDescriptionHtml;
   imgUrl: string;
+  link?: string;
 }
 
 export interface ProjectDescriptionHtml {
-  domain: string;
-  technical: string;
+  role: string;
+  technologies: ProjectTechnology[];
+}
+
+export interface ProjectTechnology {
+  title: string;
+  color: 'green' | 'red' | 'blue' | 'gray' | 'violet';
 }

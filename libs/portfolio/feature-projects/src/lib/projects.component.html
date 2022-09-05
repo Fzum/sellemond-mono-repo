@@ -1,13 +1,35 @@
 <section class="text-text-light dark:text-text-dark bg-base-light-b dark:bg-base-dark-b p-14 grid grid-cols-1
- md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10"
-         xyz="fade small stagger">
-  <div *ngFor="let p of projectsFacade.projects$ | async"
-       [id]="p.uuid"
-       class="max-w-md px-8 py-4 mx-auto mt-16 rounded-lg shadow-lg invisible bg-base-light-a dark:bg-base-dark-a">
+ xl:grid-cols-2 gap-4" xyz="fade small stagger">
+  <a *ngFor="let p of projectsFacade.projects$ | async"
+     [id]="p.uuid"
+     class="group h-52 flex flex-col md:flex-row bg-center bg-no-repeat bg-cover border border-accent-light
+     dark:border-accent-dark invisible">
+    <!--    bg-[url(assets/bestattungsplaner.png)]-->
+    <div class="basis-1/2 p-8 text-center bg-base-light-a dark:bg-base-dark-a grid justify-center items-center">
+      <div>
+        <h5 class="max-w-xs mx-auto text-lg font-bold sm:text-base">
+          {{ p.title }}
+        </h5>
+        <p class="mt-4 text-xs font-medium text-text-light dark:text-text-dark">{{ p.info.role }}</p>
+      </div>
+    </div>
+    <div
+      class="basis-1/2 grid items-center justify-center group-hover:backdrop-blur-sm bg-[url(assets/bestattungsplaner.png)] bg-cover">
+      <div class="group-hover:backdrop-blur-sm group-hover:backdrop-blur-sm h-full w-full grid items-center justify-center">
+        <div class="group-hover:visible invisible flex flex-wrap gap-1 p-3 justify-center">
+          <strong *ngFor="let t of p.info.technologies"
+                  [ngClass]="{
+                'border-violet-500 text-violet-900 bg-violet-100': t.color === 'violet',
+                'border-green-500 text-green-900 bg-green-100': t.color === 'green',
+                'border-red-500 text-red-900 bg-red-100': t.color === 'red',
+                'border-blue-500 text-blue-900 bg-blue-100': t.color === 'blue',
+                'border-gray-500 text-gray-900 bg-gray-100': t.color === 'gray' }"
+                  class="border uppercase px-5 py-1.5 rounded-full text-xs tracking-wide max-h-7 max-w-7">
+            {{ t.title }}
+          </strong>
+        </div>
+      </div>
+    </div>
+  </a>
 
-    <h2 class="mt-2 text-2xl font-semibold text-text-light dark:text-text-dark md:mt-0 md:text-3xl">{{ p.title }}</h2>
-
-    <p class="mt-2 leading-relaxed text-base" [innerHTML]="p.descriptionHtml.domain"></p>
-    <p class="mt-2 leading-relaxed text-base" [innerHTML]="p.descriptionHtml.technical"></p>
-  </div>
 </section>
