@@ -1,18 +1,24 @@
 <section class="text-text-light dark:text-text-dark bg-base-light-b dark:bg-base-dark-b p-14 grid grid-cols-1
   gap-4" xyz="fade small stagger">
   <div *ngFor="let p of projectsFacade.projects$ | async"
-     [id]="p.uuid"
-     class="group h-80 flex flex-col md:flex-row bg-base-light-a dark:bg-base-dark-a shadow-lg rounded-lg">
+       [id]="p.uuid"
+       class="group invisible h-80 flex flex-col md:flex-row bg-base-light-a dark:bg-base-dark-a shadow-lg rounded-lg">
     <!--    bg-[url(assets/bestattungsplaner.png)]-->
     <div class="basis-1/3 p-8 text-center grid justify-center items-center">
       <div>
         <h5 class="max-w-xs mx-auto text-lg font-bold sm:text-base">{{ p.title }}</h5>
-        <p class="mt-4 text-xs font-medium text-text-light dark:text-text-dark">{{ p.info.role }}</p>
+        <div class="mt-4 text-xs font-medium text-text-light dark:text-text-dark">
+          <p>{{ p.info.role }}</p>
+          <br *ngIf="!p.imgUrl">
+          <p *ngIf="!p.imgUrl">Custom Software</p>
+        </div>
       </div>
     </div>
     <div
-      class="basis-2/3 flex items-center justify-center bg-[url(assets/bestattungsplaner.png)] bg-cover">
-      <div class="group-hover:backdrop-blur-sm group-hover:backdrop-blur-sm group-hover:backdrop-brightness-50 h-full w-full flex items-center justify-center">
+      class="basis-2/3 flex items-center justify-center bg-center bg-cover"
+      [style.background-image]="p.imgUrl ? 'url(' + p.imgUrl+  ')' : 'url(assets/custom_software.png)'">
+      <div
+        class="group-hover:backdrop-blur-sm group-hover:backdrop-blur-sm group-hover:backdrop-brightness-50 h-full w-full flex items-center justify-center">
         <div class="group-hover:visible invisible flex flex-wrap gap-4 p-3 justify-center">
           <strong *ngFor="let t of p.info.technologies"
                   [ngClass]="{

@@ -2,7 +2,7 @@ export interface Project {
   uuid: string;
   title: string;
   info: ProjectDescriptionHtml;
-  imgUrl: string;
+  imgUrl?: string;
   link?: string;
 }
 

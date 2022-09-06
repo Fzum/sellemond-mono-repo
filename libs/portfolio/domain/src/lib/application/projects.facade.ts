@@ -66,7 +66,6 @@ export class ProjectsFacade {
           role: 'Java Intern',
           technologies: [java, jsf, spring, primefaces, oracle],
         },
-        imgUrl: '',
       },
       {
         uuid: 'schulbuchkatalog',
@@ -76,7 +75,6 @@ export class ProjectsFacade {
           role: 'Fullstack Java JSF',
           technologies: [java, jsf, spring, primefaces, oracle],
         },
-        imgUrl: '',
       },
       {
         uuid: 'public_schulbuchsuche',
@@ -86,7 +84,7 @@ export class ProjectsFacade {
           role: 'Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle],
         },
-        imgUrl: '',
+        imgUrl: 'assets/schulbuchsuche.png',
       },
       {
         uuid: 'public_grabstellensuche',
@@ -96,7 +94,7 @@ export class ProjectsFacade {
           role: 'Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle],
         },
-        imgUrl: '',
+        imgUrl: 'assets/grabstellensuche.png',
       },
       {
         uuid: 'online-bestattung',
@@ -106,7 +104,7 @@ export class ProjectsFacade {
           role: 'Lead Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle, keycloak, ngxs],
         },
-        imgUrl: '',
+        imgUrl: 'assets/bestattungsplaner.png',
       },
       {
         uuid: 'digitales-grab',
@@ -116,7 +114,7 @@ export class ProjectsFacade {
           role: 'Senior Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle, keycloak, ngxs],
         },
-        imgUrl: '',
+        imgUrl: 'assets/digigtales_grab.png',
       },
       {
         uuid: 'service-challenge',
@@ -126,7 +124,6 @@ export class ProjectsFacade {
           role: 'Senior Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle, keycloak, ngrx],
         },
-        imgUrl: '',
       },
       {
         uuid: 'bahnbetretung',
@@ -135,7 +132,6 @@ export class ProjectsFacade {
           role: 'Senior Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle, keycloak, ngrx],
         },
-        imgUrl: '',
       },
     ]);
   }
