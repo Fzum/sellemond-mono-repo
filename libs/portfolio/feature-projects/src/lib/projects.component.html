@@ -18,7 +18,8 @@
       class="basis-2/3 flex items-center justify-center bg-cover bg-top rounded-r-lg"
       [style.background-image]="p.imgUrl ? 'url(' + p.imgUrl+  ')' : 'url(assets/custom_software.png)'">
       <div
-        class="group-hover:backdrop-blur-sm rounded-r-lg group-hover:backdrop-blur-sm group-hover:backdrop-brightness-50 h-full w-full flex items-center justify-center">
+        class="group-hover:backdrop-blur-sm rounded-r-lg group-hover:backdrop-blur-sm group-hover:backdrop-brightness-50
+         h-full w-full flex flex-col gap-4 items-center justify-center">
         <div class="group-hover:visible invisible flex flex-wrap gap-4 p-3 justify-center">
           <strong *ngFor="let t of p.info.technologies"
                   [ngClass]="{
@@ -32,6 +33,9 @@
             {{ t.title }}
           </strong>
         </div>
+        <svg *ngIf="p.link" class="w-6 h-6 group-hover:visible invisible" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+        </svg>
       </div>
     </div>
   </div>

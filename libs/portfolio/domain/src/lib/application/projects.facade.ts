@@ -61,7 +61,6 @@ export class ProjectsFacade {
       {
         uuid: 'schul_heimbeihilfe',
         title: 'Schul- und Heimbeihilfe',
-        link: 'https://www.bmbwf.gv.at/Themen/schule/befoe/sbh.html',
         info: {
           role: 'Java Intern',
           technologies: [java, jsf, spring, primefaces, oracle],
@@ -70,7 +69,6 @@ export class ProjectsFacade {
       {
         uuid: 'schulbuchkatalog',
         title: 'Schulbuchkatalog',
-        link: 'https://www.schulbuchaktion.at/schulbuchlisten.html',
         info: {
           role: 'Fullstack Java JSF',
           technologies: [java, jsf, spring, primefaces, oracle],
@@ -119,7 +117,6 @@ export class ProjectsFacade {
       {
         uuid: 'service-challenge',
         title: 'Service Challenge',
-        link: '',
         info: {
           role: 'Senior Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle, keycloak, ngrx],
