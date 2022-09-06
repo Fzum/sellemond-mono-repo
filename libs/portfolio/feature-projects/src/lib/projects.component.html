@@ -14,10 +14,10 @@
       </div>
     </div>
     <div
-      class="basis-2/3 flex items-center justify-center bg-cover bg-top rounded-r-lg"
+      class="basis-2/3 flex items-center justify-center bg-cover bg-top rounded-b-lg md:rounded-b-none md:rounded-r-lg"
       [style.background-image]="p.imgUrl ? 'url(' + p.imgUrl+  ')' : 'url(assets/security.png)'">
       <div
-        class="group-hover:backdrop-blur-sm rounded-r-lg group-hover:backdrop-blur-sm group-hover:backdrop-brightness-50
+        class="group-hover:backdrop-blur-sm group-hover:backdrop-blur-sm group-hover:backdrop-brightness-50
          h-full w-full flex flex-col gap-4 items-center justify-center">
         <div class="group-hover:visible invisible flex flex-wrap gap-4 p-3 justify-center">
           <strong *ngFor="let t of p.info.technologies"
