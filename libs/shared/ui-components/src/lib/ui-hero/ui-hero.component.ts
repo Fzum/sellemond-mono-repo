@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardStatus, UiCardComponent } from '../ui-card/ui-card.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import {UiSocialBtnComponent} from "../ui-social-btn/ui-social-btn.component";
 
 @Component({
   selector: 'components-ui-hero',
   standalone: true,
-  imports: [CommonModule, UiCardComponent],
+  imports: [CommonModule, UiCardComponent, UiSocialBtnComponent],
   templateUrl: './ui-hero.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
