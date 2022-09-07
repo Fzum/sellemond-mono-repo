@@ -1,0 +1,10 @@
+<label [for]="'default-toggle' +  title" class="inline-flex relative items-center cursor-pointer">
+  <input (click)="toggleIsChecked()" type="checkbox" [value]="isChecked" [id]="'default-toggle' +  title" class="sr-only peer">
+  <div class="w-11 h-6 bg-primary-light-200 peer-focus:outline-none peer-focus:ring-accent-light dark:peer-focus:ring-accent-dark
+    rounded-full peer dark:bg-primary-dark-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-['']
+     after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-primary-dark-300 after:border after:rounded-full
+     after:h-5 after:w-5 after:transition-all dark:border-primary-dark-600 peer-checked:bg-accent-light dark:peer-checked:bg-accent-dark"></div>
+  <span class="ml-3 text-sm font-medium text-text-light dark:text-text-dark">
+    {{ title }}
+  </span>
+</label>

@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ProjectsFacade } from '@sellemond/portfolio/domain';
 import { UiCardComponent } from '../../../../shared/ui-components/src/lib/ui-card/ui-card.component';
 import { filter, map, Subscription } from 'rxjs';
+import {UiToggleSwitchComponent} from "@sellemond/shared/ui-components";
 
 @Component({
   standalone: true,
-  imports: [CommonModule, UiCardComponent],
+    imports: [CommonModule, UiCardComponent, UiToggleSwitchComponent],
   selector: 'portfolio-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
@@ -16,6 +17,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private projectCardIntersectionObserver: IntersectionObserver | undefined;
   private projectSub: Subscription | undefined;
+
+  isCompactViewEnabled = false;
+  isTechnologyXrayViewEnabled = false;
 
   ngOnInit() {
     this.projectsFacade.loadProjects();
