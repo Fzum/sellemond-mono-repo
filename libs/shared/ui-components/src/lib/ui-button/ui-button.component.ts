@@ -7,6 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'components-ui-button',
@@ -16,7 +17,8 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiButtonComponent implements OnInit {
-  @Input() description = '';
+  @Input() description: string | undefined;
+  @Input() iconSvg: SafeHtml | undefined;
 
   @Output() clickedBtn = new EventEmitter();
 

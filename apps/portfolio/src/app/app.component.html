@@ -57,6 +57,7 @@
     <portfolio-techstack [id]="techstackNavigationItem.componentId"></portfolio-techstack>
     <portfolio-introduction [id]="introductionNavigationItem.componentId"></portfolio-introduction>
     <portfolio-projects [id]="projectsNavigationItem.componentId"></portfolio-projects>
-    <components-ui-footer></components-ui-footer>
+    <components-ui-footer (clickedBackToTop)="viewPortScroller.scrollToAnchor(heroNavigationItem.componentId)"
+    ></components-ui-footer>
   </section>
 </div>
