@@ -48,6 +48,11 @@ export class UiFooterComponent implements OnInit {
   sanitize(svgHtml: string | undefined) {
     return this.sanitizer.bypassSecurityTrustHtml(svgHtml ?? '');
   }
+
+  openEmailClient() {
+    window.location.href =
+      'mailto:user@example.com?subject=Subject&body=message%20goes%20here';
+  }
 }
 
 interface SocialLink {

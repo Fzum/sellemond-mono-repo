@@ -5,7 +5,7 @@
     <div class="max-w-3xl mx-auto text-center flex flex-col gap-8">
       <p class="text-4xl font-extrabold sm:text-6xl">Want to get in touch?</p>
 
-      <components-ui-button [description]="'Contact Me'"></components-ui-button>
+      <components-ui-button (clickedBtn)="openEmailClient()" [description]="'Contact Me'"></components-ui-button>
       <components-ui-button (clickedBtn)="clickedBackToTop.emit()" [iconSvg]="sanitize(backToTopIcon)"></components-ui-button>
     </div>
 
