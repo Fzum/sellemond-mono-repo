@@ -11,7 +11,7 @@
               transform rounded-md hover:bg-accent-light dark:hover:bg-accent-dark"
              (click)="viewPortScroller.scrollToAnchor(i.componentId)">
             <div [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
-            <span class="mx-4 font-medium">{{ i.title }}</span>
+            <span class="cursor-pointer mx-4 font-medium">{{ i.title }}</span>
           </a>
         </nav>
       </div>
