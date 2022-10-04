@@ -3,7 +3,6 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,13 +15,10 @@ import { SafeHtml } from '@angular/platform-browser';
   templateUrl: './ui-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UiButtonComponent implements OnInit {
+export class UiButtonComponent {
   @Input() description: string | undefined;
   @Input() iconSvg: SafeHtml | undefined;
+  @Input() isAnimatedBounce = false;
 
   @Output() clickedBtn = new EventEmitter();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

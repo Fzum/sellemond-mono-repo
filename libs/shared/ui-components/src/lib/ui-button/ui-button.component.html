@@ -1,6 +1,6 @@
 <button
-  class="px-12 py-3 text-sm font-medium border rounded-full border-text-light dark:border-text-dark hover:dark:bg-accent-dark
-  hover:bg-accent-light hover:text-text-light hover:dark:text-text-dark" [innerHTML]="description ?? iconSvg"
-  (click)="clickedBtn.emit()"
+  class="group px-12 py-3 text-sm font-medium border rounded-full border-text-light dark:border-text-dark hover:dark:bg-accent-dark
+  hover:bg-accent-light hover:text-text-light hover:dark:text-text-dark"   (click)="clickedBtn.emit()"
 >
+  <div [class.group-hover:animate-bounce]="isAnimatedBounce" [innerHTML]="description ?? iconSvg"></div>
 </button>
