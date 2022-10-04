@@ -82,7 +82,7 @@ export class ProjectsFacade {
           role: 'Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle],
         },
-        imgUrl: 'assets/schulbuchsuche.png',
+        imgUrl: 'assets/schulbuchsuche.webp',
       },
       {
         uuid: 'public_grabstellensuche',
@@ -92,7 +92,7 @@ export class ProjectsFacade {
           role: 'Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle],
         },
-        imgUrl: 'assets/grabstellensuche.png',
+        imgUrl: 'assets/grabstellensuche.webp',
       },
       {
         uuid: 'online-bestattung',
@@ -102,7 +102,7 @@ export class ProjectsFacade {
           role: 'Lead Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle, keycloak, ngxs],
         },
-        imgUrl: 'assets/bestattungsplaner.png',
+        imgUrl: 'assets/bestattungsplaner.webp',
       },
       {
         uuid: 'digitales-grab',
@@ -112,7 +112,7 @@ export class ProjectsFacade {
           role: 'Senior Fullstack Java Angular',
           technologies: [java, angular, springBoot, oracle, keycloak, ngxs],
         },
-        imgUrl: 'assets/digigtales_grab.png',
+        imgUrl: 'assets/digigtales_grab.webp',
       },
       {
         uuid: 'service-challenge',
