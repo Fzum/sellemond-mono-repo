@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { UiButtonComponent } from '@sellemond/shared/ui-components';
 import { SafeHtml } from '@angular/platform-browser';
 import { HtmlSanitizerService } from '@sellemond/shared/util-components';
+import { SocialLink } from '../model/social-link.model';
 
 @Component({
   selector: 'components-ui-footer',
@@ -47,10 +48,4 @@ export class UiFooterComponent {
     window.location.href =
       'mailto:user@example.com?subject=Subject&body=message%20goes%20here';
   }
-}
-
-interface SocialLink {
-  description: string;
-  svgPath: SafeHtml;
-  url: string;
 }
