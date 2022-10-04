@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer } from '@angular/platform-browser';
+import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 
 @Component({
   selector: 'components-ui-card',
@@ -16,11 +16,7 @@ export class UiCardComponent {
   @Input() imgUrl: string | undefined;
   @Input() cardStatus: CardStatus | undefined;
 
-  constructor(private sanitizer: DomSanitizer) {}
-
-  sanitize(svgHtml: string | undefined) {
-    return this.sanitizer.bypassSecurityTrustHtml(svgHtml ?? '');
-  }
+  constructor(public htmlSanitizer: HtmlSanitizerService) {}
 }
 
 export interface CardStatus {

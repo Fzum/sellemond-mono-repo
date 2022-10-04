@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardStatus, UiCardComponent } from '../ui-card/ui-card.component';
-import { DomSanitizer } from '@angular/platform-browser';
-import {UiSocialBtnComponent} from "../ui-social-btn/ui-social-btn.component";
+import { UiSocialBtnComponent } from '../ui-social-btn/ui-social-btn.component';
+import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 
 @Component({
   selector: 'components-ui-hero',
@@ -71,11 +71,7 @@ export class UiHeroComponent {
     },
   ];
 
-  constructor(private sanitizer: DomSanitizer) {}
-
-  sanitize(svgHtml: string | undefined) {
-    return this.sanitizer.bypassSecurityTrustHtml(svgHtml ?? '');
-  }
+  constructor(public htmlSanitizer: HtmlSanitizerService) {}
 }
 
 interface HeroCardPersonInfo {

@@ -18,7 +18,7 @@
             hip hop music.</p>
 
           <div *ngFor="let i of heroCardPersonInfoItems" class="flex items-center mt-4">
-            <div [innerHTML]="sanitize(i.svgHtml)"></div>
+            <div [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
 
             <h1 class="px-2 text-sm">{{ i.title }}</h1>
           </div>

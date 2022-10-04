@@ -15,7 +15,7 @@
             <div
               class="flex-shrink-0 w-24 h-24 bg-base-light-b dark:bg-base-dark-b text-accent-light dark:text-accent-dark
               rounded-full inline-flex items-center justify-center"
-              [innerHTML]="sanitize(c.svgHtml)">
+              [innerHTML]="htmlSanitizer.sanitize(c.svgHtml)">
             </div>
             <span class="hidden sm:block">{{ c.yearStart }} {{ c.yearEnd }}</span>
           </div>

@@ -10,7 +10,7 @@
              class="flex items-center px-4 py-2 mt-5 text-text-light dark:text-text-dark transition-colors duration-200
               transform rounded-md hover:bg-accent-light dark:hover:bg-accent-dark"
              (click)="viewPortScroller.scrollToAnchor(i.componentId)">
-            <div [innerHTML]="sanitize(i.svgHtml)"></div>
+            <div [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
             <span class="mx-4 font-medium">{{ i.title }}</span>
           </a>
         </nav>
@@ -48,7 +48,7 @@
          *ngFor="let i of navigationItems"
          class="flex items-center gap-2 cursor-pointer"
          [ngClass]="{ 'underline decoration-accent-light dark:decoration-accent-dark': currentlyVisibleComponentId === i.componentId }">
-      <div [innerHTML]="sanitize(i.svgHtml)"></div>
+      <div [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
       <span>{{ i.title }}</span>
     </div>
   </section>

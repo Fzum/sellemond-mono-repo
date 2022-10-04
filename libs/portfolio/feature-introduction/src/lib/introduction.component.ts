@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IntroductionFacade } from '@sellemond/portfolio/domain';
-import { DomSanitizer } from '@angular/platform-browser';
 import { filter, Subscription } from 'rxjs';
+import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 
 @Component({
   standalone: true,
@@ -14,7 +14,7 @@ import { filter, Subscription } from 'rxjs';
 export class IntroductionComponent implements OnInit, AfterViewInit {
   constructor(
     public introductionFacade: IntroductionFacade,
-    private sanitizer: DomSanitizer
+    public htmlSanitizer: HtmlSanitizerService
   ) {}
 
   private careerEventIntersectionObserver: IntersectionObserver | undefined;
@@ -22,10 +22,6 @@ export class IntroductionComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.introductionFacade.loadCareerEvents();
-  }
-
-  sanitize(svgHtml: string | undefined) {
-    return this.sanitizer.bypassSecurityTrustHtml(svgHtml ?? '');
   }
 
   ngAfterViewInit(): void {

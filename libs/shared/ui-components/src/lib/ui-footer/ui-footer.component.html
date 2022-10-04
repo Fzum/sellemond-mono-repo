@@ -6,7 +6,7 @@
       <p class="text-4xl font-extrabold sm:text-6xl">Want to get in touch?</p>
 
       <components-ui-button (clickedBtn)="openEmailClient()" [description]="'Contact Me'"></components-ui-button>
-      <components-ui-button (clickedBtn)="clickedBackToTop.emit()" [iconSvg]="sanitize(backToTopIcon)"></components-ui-button>
+      <components-ui-button (clickedBtn)="clickedBackToTop.emit()" [iconSvg]="htmlSanitizer.sanitize(backToTopIcon)"></components-ui-button>
     </div>
 
     <div

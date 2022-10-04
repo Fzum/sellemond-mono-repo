@@ -12,7 +12,7 @@ import { TechstackComponent } from '@sellemond/portfolio/feature-techstack';
 import { IntroductionComponent } from '@sellemond/portfolio/feature-introduction';
 import { ProjectsComponent } from '@sellemond/portfolio/feature-projects';
 import { NavigationItem } from './model/navigation-item.model';
-import { DomSanitizer } from '@angular/platform-browser';
+import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 
 const themeKey = 'fs-portfolio-theme';
 const darkThemeClass = 'dark';
@@ -76,7 +76,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     public viewPortScroller: ViewportScroller,
-    private sanitizer: DomSanitizer
+    public htmlSanitizer: HtmlSanitizerService
   ) {}
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
@@ -114,10 +114,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.observer?.disconnect();
-  }
-
-  sanitize(svgHtml: string | undefined) {
-    return this.sanitizer.bypassSecurityTrustHtml(svgHtml ?? '');
   }
 
   isDarkModeEnabled() {

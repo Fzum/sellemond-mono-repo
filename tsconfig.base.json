@@ -30,6 +30,9 @@
       ],
       "@sellemond/shared/ui-components": [
         "libs/shared/ui-components/src/index.ts"
+      ],
+      "@sellemond/shared/util-components": [
+        "libs/shared/util-components/src/index.ts"
       ]
     }
   },

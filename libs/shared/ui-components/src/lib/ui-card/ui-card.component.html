@@ -6,7 +6,7 @@
 
   <div *ngIf="cardStatus" class="flex items-center px-6 py-3 bg-neutral-100 dark:bg-gray-700 text-gray-700 dark:text-white">
     <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-         [innerHTML]="sanitize(cardStatus.svgHtml)">
+         [innerHTML]="htmlSanitizer.sanitize(cardStatus.svgHtml)">
     </svg>
 
     <h1 class="mx-3 text-lg font-semibold">{{ cardStatus.label }}</h1>
