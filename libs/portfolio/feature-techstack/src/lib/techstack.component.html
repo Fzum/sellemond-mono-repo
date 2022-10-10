@@ -5,17 +5,17 @@
   ></components-ui-icon-grid>
 </section>
 <section class="text-text-light dark:text-text-dark bg-base-light-b dark:bg-base-dark-b body-font">
-  <div class="container px-5 py-24 mx-auto flex flex-wrap justify-center">
+  <div class="container px-5 py-24 mx-auto flex flex-col justify-center">
     <div class="flex flex-col text-center w-full mb-20">
       <h2 class="text-3xl font-bold sm:text-4xl">My go to combination of frameworks</h2>
       <p class="mt-4 sm:text-xl">A winning Stack makes a winning
         team!</p>
     </div>
 
-    <div class="flex flex-wrap gap-4" xyz="fade small stagger">
+    <div class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4" xyz="fade small stagger">
       <div *ngFor="let t of frameworks$ | async"
            [id]="t.uuid"
-           class="group max-w-md px-8 py-4 mx-auto mt-16 bg-base-light-a dark:bg-base-dark-a rounded-lg shadow-lg invisible
+           class="group max-w-lg px-8 py-4 mx-auto mt-16 bg-base-light-a dark:bg-base-dark-a rounded-lg shadow-lg invisible
            text-text-light dark:text-text-dark">
 
         <div class="flex justify-center -mt-16 md:justify-end">
