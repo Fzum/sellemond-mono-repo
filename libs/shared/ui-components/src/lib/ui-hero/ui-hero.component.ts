@@ -4,6 +4,7 @@ import { CardStatus, UiCardComponent } from '../ui-card/ui-card.component';
 import { UiSocialBtnComponent } from '../ui-social-btn/ui-social-btn.component';
 import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 import { UiButtonComponent } from '../ui-button/ui-button.component';
+import { UiHeadingComponent } from '../ui-heading/ui-heading.component';
 
 @Component({
   selector: 'components-ui-hero',
@@ -13,6 +14,7 @@ import { UiButtonComponent } from '../ui-button/ui-button.component';
     UiCardComponent,
     UiSocialBtnComponent,
     UiButtonComponent,
+    UiHeadingComponent,
   ],
   templateUrl: './ui-hero.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

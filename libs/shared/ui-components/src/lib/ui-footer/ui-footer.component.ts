@@ -8,11 +8,12 @@ import { CommonModule } from '@angular/common';
 import { UiButtonComponent } from '@sellemond/shared/ui-components';
 import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 import { SocialLink } from '../model/social-link.model';
+import { UiHeadingComponent } from '../ui-heading/ui-heading.component';
 
 @Component({
   selector: 'components-ui-footer',
   standalone: true,
-  imports: [CommonModule, UiButtonComponent],
+  imports: [CommonModule, UiButtonComponent, UiHeadingComponent],
   templateUrl: './ui-footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

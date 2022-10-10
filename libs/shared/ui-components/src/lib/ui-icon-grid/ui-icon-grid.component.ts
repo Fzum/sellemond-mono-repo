@@ -6,11 +6,12 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconGridItem } from './ui-icon-grid.model';
+import { UiHeadingComponent } from '../ui-heading/ui-heading.component';
 
 @Component({
   selector: 'components-ui-icon-grid',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, UiHeadingComponent],
   templateUrl: './ui-icon-grid.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

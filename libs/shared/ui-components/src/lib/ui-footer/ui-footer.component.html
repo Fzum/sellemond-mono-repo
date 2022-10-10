@@ -1,9 +1,9 @@
 <footer
   class="text-text-light dark:text-text-dark bg-base-light-a dark:bg-base-dark-a"
 >
-  <div class="max-w-screen-xl px-4 pt-32 pb-12 mx-auto sm:px-6 lg:px-8">
+  <div class="max-w-screen-xl p-10 mx-auto">
     <div class="max-w-3xl mx-auto text-center flex flex-col items-center gap-8">
-      <p class="text-4xl font-extrabold sm:text-6xl">Want to get in touch?</p>
+      <components-ui-heading [heading]="'Want to get in touch?'"></components-ui-heading>
 
       <div class="w-60">
         <components-ui-button (clickedBtn)="openEmailClient()" [description]="'Contact Me'"></components-ui-button>

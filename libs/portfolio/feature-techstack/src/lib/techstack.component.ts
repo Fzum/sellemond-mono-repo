@@ -4,10 +4,11 @@ import { TechstackFacade } from '@sellemond/portfolio/domain';
 import { filter, map, Observable, Subscription } from 'rxjs';
 import { UiIconGridComponent } from '@sellemond/shared/ui-components';
 import { IconGridItem } from '@sellemond/shared/ui-components';
+import { UiHeadingComponent } from '../../../../shared/ui-components/src/lib/ui-heading/ui-heading.component';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, UiIconGridComponent],
+  imports: [CommonModule, UiIconGridComponent, UiHeadingComponent],
   selector: 'portfolio-techstack',
   templateUrl: './techstack.component.html',
   styleUrls: ['./techstack.component.scss'],
