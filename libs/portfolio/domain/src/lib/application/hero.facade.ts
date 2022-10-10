@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { HeroContent } from '../entities/hero-content.model';
 
 const description = `<p>I'm Fabian, a <span class="text-accent-dark decoration-accent-dark">Freelance Full Stack Java developer</span> passionate about software
-  engineering. I am experienced in developing <span class="text-accent-dark decoration-accent-dark">web applications</span> starting from the user
+  engineering and Clean Code. I am experienced in developing <span class="text-accent-dark decoration-accent-dark">web applications</span> starting from the user
   interface to all the way back to the <span class="text-accent-dark decoration-accent-dark">database</span>.</p><br><p>My professional career started
   in 2017 while I was making my <span class="text-accent-dark decoration-accent-dark">Bachelor Studies in IT and Telecommunication</span>. Since then,
   I could gain comprehensive insights in different projects and teams of all sizes.</p> <br><p>To intensify my knowledge
