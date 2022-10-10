@@ -103,7 +103,13 @@ export class AppComponent implements OnInit, OnDestroy {
     this.setTheme();
   }
 
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
   private setTheme() {
+    this.enableDarkIfMatchesSystemPreference();
+
     const isDarkThemeSet = localStorage.getItem(themeKey) === darkThemeClass;
     const classList = document.documentElement.classList;
 
@@ -112,8 +118,13 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    this.observer?.disconnect();
+  private enableDarkIfMatchesSystemPreference() {
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      this.enableDarkMode();
+    }
   }
 
   isDarkModeEnabled() {
