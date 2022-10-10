@@ -80,7 +80,7 @@ export class UiHeroComponent {
   constructor(public htmlSanitizer: HtmlSanitizerService) {}
 
   downloadCv() {
-    window.open('assets/cv.pdf');
+    window.open('assets/sellemond_cv.pdf');
   }
 }
 
