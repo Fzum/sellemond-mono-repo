@@ -3,7 +3,7 @@
     <div class="flex flex-col w-64 h-full px-4 py-8 bg-base-light-b dark:bg-base-dark-b border-r border-accent-light dark:border-accent-dark">
       <h2 class="text-3xl font-semibold text-text-light dark:text-text-dark">Portfolio</h2>
 
-      <div class="flex flex-col justify-between flex-1 mt-6">
+      <div class="flex flex-col justify-between flex-1 my-6 border-b border-accent-light dark:border-accent-dark">
         <nav>
           <a *ngFor="let i of navigationItems"
              [ngClass]="{ 'underline decoration-accent-light dark:decoration-accent-dark': currentlyVisibleComponentId === i.componentId }"
