@@ -2,11 +2,15 @@
   class="text-text-light dark:text-text-dark bg-base-light-a dark:bg-base-dark-a"
 >
   <div class="max-w-screen-xl px-4 pt-32 pb-12 mx-auto sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto text-center flex flex-col gap-8">
+    <div class="max-w-3xl mx-auto text-center flex flex-col items-center gap-8">
       <p class="text-4xl font-extrabold sm:text-6xl">Want to get in touch?</p>
 
-      <components-ui-button (clickedBtn)="openEmailClient()" [description]="'Contact Me'"></components-ui-button>
-      <components-ui-button (clickedBtn)="clickedBackToTop.emit()" [isAnimatedBounce]="true" [iconSvg]="htmlSanitizer.sanitize(backToTopIcon)"></components-ui-button>
+      <div class="w-60">
+        <components-ui-button (clickedBtn)="openEmailClient()" [description]="'Contact Me'"></components-ui-button>
+      </div>
+      <div class="w-36">
+        <components-ui-button (clickedBtn)="clickedBackToTop.emit()" [isAnimatedBounce]="true" [iconSvg]="htmlSanitizer.sanitize(backToTopIcon)"></components-ui-button>
+      </div>
     </div>
 
     <div

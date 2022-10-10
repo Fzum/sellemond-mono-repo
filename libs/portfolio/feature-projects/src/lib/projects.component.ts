@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsFacade } from '@sellemond/portfolio/domain';
-import { UiCardComponent } from '../../../../shared/ui-components/src/lib/ui-card/ui-card.component';
+import { UiCardComponent } from '@sellemond/shared/ui-components';
 import { filter, map, Subscription } from 'rxjs';
 import { UiToggleSwitchComponent } from '@sellemond/shared/ui-components';
 

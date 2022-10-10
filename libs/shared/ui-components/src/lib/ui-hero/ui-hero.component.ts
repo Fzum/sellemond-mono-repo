@@ -3,11 +3,17 @@ import { CommonModule } from '@angular/common';
 import { CardStatus, UiCardComponent } from '../ui-card/ui-card.component';
 import { UiSocialBtnComponent } from '../ui-social-btn/ui-social-btn.component';
 import { HtmlSanitizerService } from '@sellemond/shared/util-components';
+import { UiButtonComponent } from '../ui-button/ui-button.component';
 
 @Component({
   selector: 'components-ui-hero',
   standalone: true,
-  imports: [CommonModule, UiCardComponent, UiSocialBtnComponent],
+  imports: [
+    CommonModule,
+    UiCardComponent,
+    UiSocialBtnComponent,
+    UiButtonComponent,
+  ],
   templateUrl: './ui-hero.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
