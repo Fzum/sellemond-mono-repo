@@ -20,7 +20,7 @@
               <div [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
               <h1 class="px-2 text-sm">{{ i.title }}</h1>
             </div>
-            <components-ui-button [description]="'Download CV'"></components-ui-button>
+            <components-ui-button (clickedBtn)="downloadCv()" [description]="'Download CV'"></components-ui-button>
             <components-ui-social-btn></components-ui-social-btn>
           </div>
 

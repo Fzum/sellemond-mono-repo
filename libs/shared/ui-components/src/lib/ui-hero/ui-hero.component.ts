@@ -78,6 +78,10 @@ export class UiHeroComponent {
   ];
 
   constructor(public htmlSanitizer: HtmlSanitizerService) {}
+
+  downloadCv() {
+    window.open('assets/cv.pdf');
+  }
 }
 
 interface HeroCardPersonInfo {
