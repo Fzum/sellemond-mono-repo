@@ -48,7 +48,7 @@
          *ngFor="let i of navigationItems"
          class="flex items-center gap-2 cursor-pointer"
          [ngClass]="{ 'underline decoration-accent-light dark:decoration-accent-dark': currentlyVisibleComponentId === i.componentId }">
-      <div [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
+      <div class="hidden sm:block"  [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
       <span>{{ i.title }}</span>
     </div>
   </section>
