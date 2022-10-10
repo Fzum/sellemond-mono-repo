@@ -14,8 +14,7 @@
           [imgUrl]="'assets/profile.webp'">
           <div class="flex flex-col gap-4">
             <h1 class="text-xl font-semibold ">Sellemond Fabian, MSc.</h1>
-            <p>Senior Full Stack Software Engineer since 2017 with a passion for good software design and
-              hip hop music.</p>
+            <p>Senior Full Stack Software Engineer since 2017 with a passion for software engineering and clean code.</p>
             <div *ngFor="let i of heroCardPersonInfoItems" class="flex items-center">
               <div [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
               <h1 class="px-2 text-sm">{{ i.title }}</h1>
