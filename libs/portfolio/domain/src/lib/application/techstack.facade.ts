@@ -37,6 +37,16 @@ export class TechstackFacade {
             'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/600px-Tailwind_CSS_Logo.svg.png?20211001194333',
           link: 'https://tailwindcss.com/',
         },
+        {
+          uuid: 'keycloak',
+          title: 'Keycloak',
+          descriptionHtml:
+            'Keycloak is an open-source identity and access management tool with a focus on modern applications such as single-page applications, mobile applications, and REST APIs. The project was started in 2014. ' +
+            'It has since grown into a well-established open source project with a strong community behind that. It is used for small projects to large enterprises.',
+          imgUrl:
+            'https://www.keycloak.org/resources/images/keycloak_icon_512px.svg',
+          link: 'https://www.keycloak.org/',
+        },
       ],
       techstackItems: [
         {
