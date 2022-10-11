@@ -1,8 +1,8 @@
 <section class="text-text-light dark:text-text-dark bg-base-light-b dark:bg-base-dark-b p-14 ">
   <components-ui-toggle-switch class="hidden md:block" [(isChecked)]="isCompactViewEnabled"
-                               [title]="'Compact View'"></components-ui-toggle-switch>
+                               [title]="'Compact view'"></components-ui-toggle-switch>
   <components-ui-toggle-switch [(isChecked)]="isTechnologyXrayViewEnabled"
-                               [title]="'Show All Technologies'"></components-ui-toggle-switch>
+                               [title]="'Show all technologies'"></components-ui-toggle-switch>
   <div class="mt-4 grid gap-4" xyz="fade small stagger"
        [ngClass]="{
        'md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4': isCompactViewEnabled,
@@ -44,12 +44,12 @@
                 'border-blue-500 text-blue-900 bg-blue-100': t.color === 'blue',
                 'border-gray-500 text-gray-900 bg-gray-100': t.color === 'gray' }"
                     class="border uppercase px-5 py-1.5 rounded-full text-xs tracking-wide max-h-20 max-w-20 hover:scale-125
-                  transition ease-in-out cursor-pointer">
+                  transition ease-in-out">
               {{ t.title }}
             </strong>
           </div>
           <a *ngIf="p.link" [href]="p.link" target="_blank">
-            <svg class="w-6 h-6 hover:scale-125 transition ease-in-out cursor-pointer"
+            <svg class="w-12 h-12 hover:scale-125 transition ease-in-out cursor-pointer"
                  [class.group-hover:visible]="!isTechnologyXrayViewEnabled"
                  [class.invisible]="!isTechnologyXrayViewEnabled"
                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
