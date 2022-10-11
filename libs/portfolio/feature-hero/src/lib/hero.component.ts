@@ -4,7 +4,7 @@ import { HeroFacade } from '@sellemond/portfolio/domain';
 import { UiHeroComponent } from '@sellemond/shared/ui-components';
 import { map } from 'rxjs';
 import { HeroContent } from '@sellemond/portfolio/domain';
-import { CardStatus } from '../../../../shared/ui-components/src/lib/ui-card/ui-card.component';
+import { CardStatus } from '@sellemond/shared/ui-components';
 
 @Component({
   standalone: true,
@@ -29,10 +29,6 @@ export class HeroComponent implements OnInit {
 
   get description$() {
     return this.extract((h) => h.descriptionHtml);
-  }
-
-  get imageUrl$() {
-    return this.extract((h) => h.imageUrl);
   }
 
   get title$() {
