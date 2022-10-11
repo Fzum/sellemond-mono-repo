@@ -70,7 +70,7 @@ export class IntroductionFacade {
         yearEnd: 2022,
         title: 'adesso Austria GmbH',
         descriptionHtml:
-          '2020 I started working for <a class="text-accent-light dark:text-accent-dark" target="_blank" href="https://www.adesso.at/de_at/index-2.jsp">adesso Austria GmbH</a> as fullstack software engineer.',
+          '2020 I started working for <a class="text-accent-light dark:text-accent-dark" target="_blank" href="https://www.adesso.at/de_at/index-2.jsp">adesso Austria GmbH</a> as senior fullstack software engineer. In that period, I could implement and maintain several web applications for the <a class="text-accent-light dark:text-accent-dark" target="_blank" href="https://www.wienit.at/">Wien IT</a>.',
         svgHtml: adessoSvg,
       },
     ]);
