@@ -13,6 +13,7 @@ import { IntroductionComponent } from '@sellemond/portfolio/feature-introduction
 import { ProjectsComponent } from '@sellemond/portfolio/feature-projects';
 import { NavigationItem } from './model/navigation-item.model';
 import { HtmlSanitizerService } from '@sellemond/shared/util-components';
+import { Title } from '@angular/platform-browser';
 
 const themeKey = 'fs-portfolio-theme';
 const darkThemeClass = 'dark';
@@ -77,8 +78,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     public viewPortScroller: ViewportScroller,
-    public htmlSanitizer: HtmlSanitizerService
-  ) {}
+    public htmlSanitizer: HtmlSanitizerService,
+    titleService: Title
+  ) {
+    titleService.setTitle('Software Sellemond');
+  }
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll() {
