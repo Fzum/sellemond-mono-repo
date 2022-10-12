@@ -16,6 +16,7 @@ import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 
 const themeKey = 'fs-portfolio-theme';
 const darkThemeClass = 'dark';
+const lightThemeClass = 'light';
 
 @Component({
   selector: 'sellemond-root',
@@ -108,7 +109,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private setTheme() {
-    this.enableDarkIfMatchesSystemPreference();
+    this.enableDarkIfMatchesSystemPreferenceAndThemeHasNeverBeenSet();
 
     const isDarkThemeSet = localStorage.getItem(themeKey) === darkThemeClass;
     const classList = document.documentElement.classList;
@@ -118,8 +119,9 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-  private enableDarkIfMatchesSystemPreference() {
+  private enableDarkIfMatchesSystemPreferenceAndThemeHasNeverBeenSet() {
     if (
+      localStorage.getItem(themeKey) == undefined &&
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {
@@ -138,6 +140,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   disableDarkMode() {
     document.documentElement.classList.remove(darkThemeClass);
-    localStorage.removeItem(themeKey);
+    localStorage.setItem(themeKey, lightThemeClass);
   }
 }
