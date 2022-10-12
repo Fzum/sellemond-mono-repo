@@ -7,7 +7,7 @@
     <dl class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" xyz="fade down-100% back-5 stagger-2.5">
       <div *ngFor="let i of iconGridItem.items"
            [id]="i.uuid"
-           class="hover:justify-center invisible bg-base-light-a dark:bg-base-dark-a flex flex-col px-4 py-8 text-center
+           class="invisible bg-base-light-a dark:bg-base-dark-a flex flex-col px-4 py-8 text-center
             rounded-lg shadow-lg gap-4">
         <dt class=" order-last text-lg font-medium text-primary-light-500 dark:text-primary-dark-400">
           {{ i.category }}
@@ -15,7 +15,7 @@
 
         <dd class="text-4xl font-bold text-accent-light dark:text-accent-dark md:text-5xl flex flex-col gap-5 items-center">
           <span class="mt-2 text-2xl font-semibold md:text-3xl">{{ i.title }}</span>
-          <img class="h-20 w-20" [src]="i.iconUrl" alt="java">
+          <img class="h-20 w-20" [src]="i.iconUrl" [alt]="i.title">
         </dd>
       </div>
     </dl>
