@@ -6,7 +6,7 @@ import {
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SafeHtml } from '@angular/platform-browser';
+import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 
 @Component({
   selector: 'components-ui-button',
@@ -17,8 +17,10 @@ import { SafeHtml } from '@angular/platform-browser';
 })
 export class UiButtonComponent {
   @Input() description: string | undefined;
-  @Input() iconSvg: SafeHtml | undefined;
+  @Input() iconSvg: string | undefined;
   @Input() isAnimatedBounce = false;
 
   @Output() clickedBtn = new EventEmitter();
+
+  constructor(public htmlSanitizer: HtmlSanitizerService) {}
 }
