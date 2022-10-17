@@ -10,7 +10,7 @@ rounded-full border-current group">
          target="_blank"
          [href]="l.url">
         <span class="sr-only">{{ l.description }}</span>
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" [innerHTML]="l.svgPath"></svg>
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" [innerHTML]="htmlSanitizer.sanitize(l.svgPath)"></svg>
       </a>
     </li>
   </ul>

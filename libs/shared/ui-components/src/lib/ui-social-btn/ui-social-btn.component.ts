@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SocialLink } from '../model/social-link.model';
+import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 
 @Component({
   selector: 'components-ui-social-btn',
@@ -10,6 +11,8 @@ import { SocialLink } from '../model/social-link.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiSocialBtnComponent {
+  constructor(public htmlSanitizer: HtmlSanitizerService) {}
+
   socialLinks: SocialLink[] = [
     {
       description: 'LinkedIn',
