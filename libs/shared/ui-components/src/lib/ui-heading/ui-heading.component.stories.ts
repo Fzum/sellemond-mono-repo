@@ -17,5 +17,6 @@ const Template: Story<UiHeadingComponent> = (args: UiHeadingComponent) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-  heading: '',
+  heading: 'This is the heading!',
+  subheading: '...and this is the sub.',
 };
