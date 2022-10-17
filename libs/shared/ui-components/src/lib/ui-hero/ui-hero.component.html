@@ -17,7 +17,8 @@
             <p>Senior Fullstack Software Engineer since 2017 with a passion for software engineering and clean code.</p>
             <div *ngFor="let i of heroCardPersonInfoItems" class="flex items-center">
               <div [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
-              <h1 class="px-2 text-sm">{{ i.title }}</h1>
+              <h1 *ngIf="!i.href" class="px-2 text-sm">{{ i.title }}</h1>
+              <a [href]="i.href" *ngIf="i.href" class="px-2 text-sm">{{ i.title }}</a>
             </div>
             <components-ui-button (clickedBtn)="downloadCv()" [description]="'Download CV'"></components-ui-button>
             <components-ui-social-btn></components-ui-social-btn>
