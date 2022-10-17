@@ -1,5 +1,31 @@
-<components-ui-hero
-  [descriptionHtml]="description$ | async"
-  [title]="title$ | async"
-  [cardStatus]="cardStatus"
-></components-ui-hero>
+<header class="bg-base-light-a dark:bg-base-dark-a">
+  <div class="container px-6 py-16 mx-auto">
+    <div class="items-center lg:flex text-text-light dark:text-text-dark">
+      <div class="w-full lg:w-1/2">
+        <div class="lg:max-w-lg">
+          <components-ui-heading [heading]="(title$ | async)!"></components-ui-heading>
+          <p class="mt-2 " [innerHTML]="description$ | async"></p>
+        </div>
+      </div>
+      <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+        <components-ui-card
+          [cardStatus]="cardStatus"
+          [isAnimatedAll]="true"
+          [imgUrl]="'assets/profile.webp'">
+          <div class="flex flex-col gap-4">
+            <h1 class="text-xl font-semibold">Sellemond Fabian, MSc.</h1>
+            <p>Senior Fullstack Software Engineer since 2017 with a passion for software engineering and clean code.</p>
+            <div *ngFor="let i of heroCardPersonInfoItems" class="flex items-center">
+              <div [innerHTML]="htmlSanitizer.sanitize(i.svgHtml)"></div>
+              <h1 *ngIf="!i.href" class="px-2 text-sm">{{ i.title }}</h1>
+              <a [href]="i.href" *ngIf="i.href" class="px-2 text-sm">{{ i.title }}</a>
+            </div>
+            <components-ui-button (clickedBtn)="downloadCv()" [description]="'Download CV'"></components-ui-button>
+            <components-ui-social-btn></components-ui-social-btn>
+          </div>
+
+        </components-ui-card>
+      </div>
+    </div>
+  </div>
+</header>
