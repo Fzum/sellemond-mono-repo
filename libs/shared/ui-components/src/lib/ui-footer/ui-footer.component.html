@@ -3,25 +3,26 @@
 >
   <div class="max-w-screen-xl p-10 mx-auto">
     <div class="max-w-3xl mx-auto text-center flex flex-col items-center gap-8">
-      <components-ui-heading [heading]="'Want to get in touch?'"></components-ui-heading>
+      <components-ui-heading [heading]="header"></components-ui-heading>
 
       <div class="w-60">
         <components-ui-button (clickedBtn)="openEmailClient()" [description]="'Contact Me'"></components-ui-button>
       </div>
       <div class="w-36">
-        <components-ui-button (clickedBtn)="clickedBackToTop.emit()" [isAnimatedBounce]="true" [iconSvg]="backToTopIcon"></components-ui-button>
+        <components-ui-button (clickedBtn)="clickedBackToTop.emit()" [isAnimatedBounce]="true"
+                              [iconSvg]="backToTopIcon"></components-ui-button>
       </div>
     </div>
 
     <div
       class="pt-12 mt-10 border-t border-accent-light dark:border-accent-dark"
     >
-      <div class="flex justify-center gap-6 mt-6 sm:mt-0">
+      <div class="flex flex-wrap justify-center gap-6 mt-6 sm:mt-0">
         <a *ngFor="let l of socialLinks"
-          class="group p-2 border rounded-full border-text-light dark:border-text-dark hover:border-accent-light hover:dark:border-accent-dark hover:opacity-75"
-          [href]="l.url"
-          target="_blank"
-          rel="noreferrer"
+           class="group p-2 border rounded-full border-text-light dark:border-text-dark hover:border-accent-light hover:dark:border-accent-dark hover:opacity-75"
+           [href]="l.url"
+           target="_blank"
+           rel="noreferrer"
         >
           <span class="sr-only">{{ l.description }}</span>
           <svg
@@ -29,7 +30,7 @@
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
-            [innerHTML]="l.svgPath"
+            [innerHTML]="htmlSanitizer.sanitize(l.svgPath)"
           ></svg>
         </a>
       </div>
