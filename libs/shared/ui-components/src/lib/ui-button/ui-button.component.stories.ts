@@ -18,7 +18,7 @@ const Template: Story<UiButtonComponent> = (args: UiButtonComponent) => ({
 export const TextButton = Template.bind({});
 TextButton.args = {
   isAnimatedBounce: false,
-  description: 'xx',
+  description: 'Hier könnte Ihre Werbung stehen!',
 };
 
 export const IconButton = Template.bind({});
