@@ -92,6 +92,8 @@ export class AppComponent implements OnInit, OnDestroy {
   intronEl!: ElementRef;
   @ViewChild(ProjectsComponent, { read: ElementRef }) projectsEl!: ElementRef;
 
+  @ViewChild('mobileThemeSwitcher') mobileThemeSwitcher!: ElementRef;
+
   constructor(
     public viewPortScroller: ViewportScroller,
     public htmlSanitizer: HtmlSanitizerService,
@@ -102,6 +104,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll() {
+    this.setCurrentVisibleMenuItemBasedOnYOffset();
+    this.hideMobileThemeSwitcherBasedOnYOffset();
+  }
+
+  private setCurrentVisibleMenuItemBasedOnYOffset() {
     const isYOffsetInBetween = (curr: ElementRef, prev: ElementRef) =>
       window.scrollY >= curr.nativeElement.offsetTop &&
       window.scrollY < prev.nativeElement.offsetTop;
@@ -117,6 +124,16 @@ export class AppComponent implements OnInit, OnDestroy {
     } else if (window.scrollY > this.projectsEl.nativeElement.offsetTop) {
       this.currentlyVisibleComponentId =
         this.projectsNavigationItem.componentId;
+    }
+  }
+
+  private hideMobileThemeSwitcherBasedOnYOffset() {
+    const themeSwitcher = this.mobileThemeSwitcher.nativeElement;
+    const isMobileThemeSwitcherVisible =
+      window.getComputedStyle(themeSwitcher).display !== 'none';
+
+    if (isMobileThemeSwitcherVisible) {
+      themeSwitcher.style.bottom = `-${window.scrollY}px`;
     }
   }
 
