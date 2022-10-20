@@ -1,6 +1,7 @@
 <div class="flex flex-col lg:flex-row">
   <section class="hidden lg:block sticky top-0 h-screen">
-    <div class="flex flex-col w-64 h-full px-4 py-8 bg-base-light-b dark:bg-base-dark-b border-r border-accent-light dark:border-accent-dark">
+    <div
+      class="flex flex-col w-64 h-full px-4 py-8 bg-base-light-b dark:bg-base-dark-b border-r border-accent-light dark:border-accent-dark">
       <h2 class="text-3xl font-semibold text-text-light dark:text-text-dark">Portfolio</h2>
 
       <div class="flex flex-col justify-between flex-1 my-6 border-b border-accent-light dark:border-accent-dark">
@@ -64,4 +65,18 @@
       (clickedBackToTop)="viewPortScroller.scrollToAnchor(heroNavigationItem.componentId)"
     ></components-ui-footer>
   </section>
+</div>
+<div class="lg:hidden bottom-0 fixed w-full bg-base-light-a dark:bg-base-dark-a flex items-center justify-center p-3
+ text-text-light dark:text-text-dark border-t border-t-accent-light dark:border-t-accent-dark">
+  <svg *ngIf="isDarkModeEnabled()" (click)="disableDarkMode()" xmlns="http://www.w3.org/2000/svg" fill="none"
+       viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+       class="w-6 h-6 cursor-pointer">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+  </svg>
+  <svg *ngIf="!isDarkModeEnabled()" (click)="enableDarkMode()" xmlns="http://www.w3.org/2000/svg" fill="none"
+       viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+  </svg>
 </div>
