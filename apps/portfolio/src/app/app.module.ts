@@ -7,6 +7,7 @@ import { IntroductionComponent } from '@sellemond/portfolio/feature-introduction
 import { ProjectsComponent } from '@sellemond/portfolio/feature-projects';
 import { TechstackComponent } from '@sellemond/portfolio/feature-techstack';
 import { UiFooterComponent } from '../../../../libs/shared/ui-components/src/lib/ui-footer/ui-footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { UiFooterComponent } from '../../../../libs/shared/ui-components/src/lib
     ProjectsComponent,
     TechstackComponent,
     UiFooterComponent,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
