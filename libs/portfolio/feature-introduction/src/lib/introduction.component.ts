@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IntroductionFacade } from '@sellemond/portfolio/domain';
-import { filter, Subscription } from 'rxjs';
+import { delay, filter, Subscription } from 'rxjs';
 import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 
 @Component({
@@ -26,9 +26,12 @@ export class IntroductionComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.careerEventSub = this.introductionFacade.careerEvents$
-      .pipe(filter((uuid) => uuid.length > 0))
-      .subscribe((careerEvents) => {
-        const descriptionChildSelectors = careerEvents
+      .pipe(
+        filter((events) => events.length > 0),
+        delay(0)
+      )
+      .subscribe((events) => {
+        const descriptionChildSelectors = events
           .map((e) => `#description-${e.uuid}`)
           .map((e) => `${e} > h2, ${e} > div`)
           .join();
