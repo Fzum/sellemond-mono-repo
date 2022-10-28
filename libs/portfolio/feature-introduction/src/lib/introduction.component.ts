@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IntroductionFacade } from '@sellemond/portfolio/domain';
 import { filter, Subscription } from 'rxjs';
@@ -11,7 +11,7 @@ import { HtmlSanitizerService } from '@sellemond/shared/util-components';
   templateUrl: './introduction.component.html',
   styleUrls: ['./introduction.component.scss'],
 })
-export class IntroductionComponent implements OnInit, AfterViewInit {
+export class IntroductionComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     public introductionFacade: IntroductionFacade,
     public htmlSanitizer: HtmlSanitizerService
@@ -52,5 +52,10 @@ export class IntroductionComponent implements OnInit, AfterViewInit {
           this.careerEventIntersectionObserver?.observe(d);
         });
       });
+  }
+
+  ngOnDestroy(): void {
+    this.careerEventSub?.unsubscribe();
+    this.careerEventIntersectionObserver?.disconnect();
   }
 }
