@@ -1,5 +1,6 @@
 // INFO: This is a global Tailwind CSS preset that can be shared / imported in all other Tailwind projects
-// e.g. needed to hava scalable solution in "add tailwind to storybook in shared libs" (otherwise tailwind.config)
+// e.g. needed to hava scalable solution in "add tailwind to storybook in shared libs" (otherwise tailwind.config needed
+// to be duplicated for storybook libs)
 
 module.exports = {
   theme: {
