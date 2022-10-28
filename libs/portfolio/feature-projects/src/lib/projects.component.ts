@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsFacade } from '@sellemond/portfolio/domain';
 import { UiCardComponent } from '@sellemond/shared/ui-components';
-import { filter, map, Subscription } from 'rxjs';
+import { delay, filter, map, Subscription } from 'rxjs';
 import { UiToggleSwitchComponent } from '@sellemond/shared/ui-components';
 
 @Component({
@@ -30,7 +30,8 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
       .pipe(
         map((t) => t.map((tt) => `#${tt.uuid}`)),
         filter((uuid) => uuid.length > 0),
-        map((uuid) => uuid.join())
+        map((uuid) => uuid.join()),
+        delay(0)
       )
       .subscribe((delimitedIds) => {
         const projectCards = document.querySelectorAll(delimitedIds);

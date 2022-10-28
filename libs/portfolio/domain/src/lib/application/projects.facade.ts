@@ -1,135 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Project, ProjectTechnology } from '../entities/project.model';
-
-const java: ProjectTechnology = {
-  title: 'Java',
-  color: 'gray',
-};
-
-const spring: ProjectTechnology = {
-  title: 'Spring',
-  color: 'green',
-};
-
-const springBoot: ProjectTechnology = {
-  title: 'Spring Boot',
-  color: 'green',
-};
-
-const jsf: ProjectTechnology = {
-  title: 'JSF',
-  color: 'blue',
-};
-
-const primefaces: ProjectTechnology = {
-  title: 'Primefaces',
-  color: 'gray',
-};
-
-const oracle: ProjectTechnology = {
-  title: 'Oracle',
-  color: 'red',
-};
-
-const angular: ProjectTechnology = {
-  title: 'Angular',
-  color: 'red',
-};
-
-const ngxs: ProjectTechnology = {
-  title: 'NGXS',
-  color: 'gray',
-};
-
-const ngrx: ProjectTechnology = {
-  title: 'NGRX',
-  color: 'violet',
-};
-
-const keycloak: ProjectTechnology = {
-  title: 'Angular',
-  color: 'blue',
-};
+import { Project } from '../entities/project.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class ProjectsFacade {
   projects$ = new BehaviorSubject<Project[]>([]);
 
+  constructor(private http: HttpClient) {}
+
   loadProjects() {
-    this.projects$.next([
-      {
-        uuid: 'schul_heimbeihilfe',
-        title: 'Schul- und Heimbeihilfe',
-        info: {
-          role: 'Java Intern',
-          technologies: [java, jsf, spring, primefaces, oracle],
-        },
-      },
-      {
-        uuid: 'schulbuchkatalog',
-        title: 'Schulbuchkatalog',
-        info: {
-          role: 'Fullstack Java JSF',
-          technologies: [java, jsf, spring, primefaces, oracle],
-        },
-      },
-      {
-        uuid: 'public_schulbuchsuche',
-        title: 'Öffentliche Schulbuchsuche',
-        link: 'https://www.schulbuchaktion.at/sbkSchulbuchsuche/index.xhtml',
-        info: {
-          role: 'Fullstack Java Angular',
-          technologies: [java, angular, springBoot, oracle],
-        },
-        imgUrl: 'assets/schulbuchsuche.webp',
-      },
-      {
-        uuid: 'public_grabstellensuche',
-        title: 'Freie Grabstellensuche',
-        link: 'https://www.friedhoefewien.at/freie-grabstellensuche',
-        info: {
-          role: 'Fullstack Java Angular',
-          technologies: [java, angular, springBoot, oracle],
-        },
-        imgUrl: 'assets/grabstellensuche.webp',
-      },
-      {
-        uuid: 'online-bestattung',
-        title: 'Bestattungsplaner',
-        link: 'https://www.bestattungsplaner.at/#/home',
-        info: {
-          role: 'Lead Fullstack Java Angular',
-          technologies: [java, angular, springBoot, oracle, keycloak, ngxs],
-        },
-        imgUrl: 'assets/bestattungsplaner.webp',
-      },
-      {
-        uuid: 'digitales-grab',
-        title: 'Digitales Grab',
-        link: 'https://digitalesgrab.friedhoefewien.at/',
-        info: {
-          role: 'Senior Fullstack Java Angular',
-          technologies: [java, angular, springBoot, oracle, keycloak, ngxs],
-        },
-        imgUrl: 'assets/digigtales_grab.webp',
-      },
-      {
-        uuid: 'service-challenge',
-        title: 'Service Challenge',
-        info: {
-          role: 'Senior Fullstack Java Angular',
-          technologies: [java, angular, springBoot, oracle, keycloak, ngrx],
-        },
-      },
-      {
-        uuid: 'bahnbetretung',
-        title: 'Bahnbetretung',
-        info: {
-          role: 'Senior Fullstack Java Angular',
-          technologies: [java, angular, springBoot, oracle, keycloak, ngrx],
-        },
-      },
-    ]);
+    this.http
+      .get<Project[]>('assets/data/projects.data.json')
+      .subscribe((projects) => this.projects$.next(projects));
   }
 }
