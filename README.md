@@ -18,10 +18,24 @@ Consists of its [Domain](libs/portfolio/domain) and a [buildable app](apps/portf
 ### Deployment
 
 The application is set up with a CI/CD pipeline
-via [Netfliy](https://app.netlify.com/teams/office-xir7w58/overview?_ga=2.32951741.2020056890.1665660647-2121278057.1665393276)
+via [Netlify](https://app.netlify.com/teams/office-xir7w58/overview?_ga=2.32951741.2020056890.1665660647-2121278057.1665393276)
 . The user is `office@software-sellemond.com`.
-The [Netlify Build Settings](https://app.netlify.com/sites/sparkling-pixie-e5050f/settings/deploys) are set up, so that
-on each push to `main` the application is built and published.
+The [Netlify Build Settings](https://app.netlify.com/sites/sellemond-portfolio/settings/deploys) are set up, so that
+on each push to `main` the application is built and published to http://software-sellemond.com/.
+
+## Pattern Library
+
+The Pattern Library in the [UI Folder](libs/shared/ui-components) contains only "dumb" presentational component with In-
+and Outputs. For this project a storybook was set up. On each push to main, the story book is built and published via
+this [Netlify Config](https://app.netlify.com/sites/sellemond-pattern-library/overview)
+to https://sellemond-pattern-library.netlify.app/.
+
+To set up Tailwind in the [UI Project](libs/shared/ui-components), it needs
+this [tailwind.config.js](libs/shared/ui-components/tailwind.config.js). In order to be scalable (meaning that when the
+main app tailwind.config updates, the UI projects tailwind.config does not need to updated too) the
+global [tailwind.config.json](tailwind.config.js) was extracted and can be imported as a tailwind preset like:
+
+``module.exports = {... presets: [sharedTailwindConfig] }``
 
 ## General about the Mono Repo
 
