@@ -1,10 +1,9 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TechstackFacade } from '@sellemond/portfolio/domain';
-import { filter, map, Observable, Subscription } from 'rxjs';
+import { delay, filter, map, Subscription } from 'rxjs';
 import { UiIconGridComponent } from '@sellemond/shared/ui-components';
-import { IconGridItem } from '@sellemond/shared/ui-components';
-import { UiHeadingComponent } from '../../../../shared/ui-components/src/lib/ui-heading/ui-heading.component';
+import { UiHeadingComponent } from '@sellemond/shared/ui-components';
 
 @Component({
   standalone: true,
@@ -29,10 +28,11 @@ export class TechstackComponent implements OnInit, AfterViewInit, OnDestroy {
         map((c) => c.frameworks),
         map((t) => t.map((tt) => `#${tt.uuid}`)),
         filter((uuid) => uuid.length > 0),
-        map((uuid) => uuid.join())
+        map((uuid) => uuid.join()),
+        delay(0)
       )
       .subscribe((delimitedIds) => {
-        const technologieCards = document.querySelectorAll(delimitedIds);
+        const technologyCards = document.querySelectorAll(delimitedIds);
         this.technologyCardIntersectionObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -44,7 +44,7 @@ export class TechstackComponent implements OnInit, AfterViewInit, OnDestroy {
           },
           { threshold: 0.3 }
         );
-        technologieCards.forEach((card) => {
+        technologyCards.forEach((card) => {
           this.technologyCardIntersectionObserver?.observe(card);
         });
       });
@@ -61,7 +61,7 @@ export class TechstackComponent implements OnInit, AfterViewInit, OnDestroy {
     );
   }
 
-  get iconGridItems$(): Observable<IconGridItem[]> {
+  get iconGridItems$() {
     return this.techstackFacade.techStackSectionContent$.pipe(
       map((c) => c.techstackItems)
     );

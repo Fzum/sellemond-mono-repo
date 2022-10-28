@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { TechstackSectionContent } from '../entities/technology.model';
-
-const baseLogoUrl = 'assets/logo';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class TechstackFacade {
@@ -11,92 +10,13 @@ export class TechstackFacade {
     frameworks: [],
   });
 
+  constructor(private http: HttpClient) {}
+
   techStackSectionContent() {
-    this.techStackSectionContent$.next({
-      frameworks: [
-        {
-          uuid: 'angular',
-          title: 'Angular',
-          descriptionHtml:
-            "With Angular, you're taking advantage of a platform that can scale from single-developer projects to enterprise-level applications. Angular is designed to make updating as straightforward as possible, so take advantage of the latest developments with a minimum of effort. Best of all, the Angular ecosystem consists of a diverse group of over 1.7 million developers, library authors, and content creators.",
-          imgUrl: `${baseLogoUrl}/angular.svg`,
-          link: 'https://angular.io/',
-        },
-        {
-          uuid: 'springframework',
-          title: 'Spring Framework',
-          descriptionHtml: `Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run". We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need minimal Spring configuration. If you’re looking for information about a specific version, or instructions about how to upgrade from an earlier release, check out the project release notes section on our wiki.`,
-          imgUrl: `${baseLogoUrl}/spring.svg`,
-          link: 'https://spring.io/projects',
-        },
-        {
-          uuid: 'tailwind',
-          title: 'Tailwind',
-          descriptionHtml:
-            'Tailwind CSS is basically a utility-first CSS framework for rapidly building custom user interfaces. It is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.',
-          imgUrl: `${baseLogoUrl}/tailwind.svg`,
-          link: 'https://tailwindcss.com/',
-        },
-        {
-          uuid: 'keycloak',
-          title: 'Keycloak',
-          descriptionHtml:
-            'Keycloak is an open-source identity and access management tool with a focus on modern applications such as single-page applications, mobile applications, and REST APIs. The project was started in 2014. ' +
-            'It has since grown into a well-established open source project with a strong community behind that. It is used for small projects to large enterprises.',
-          imgUrl: `${baseLogoUrl}/keycloak.svg`,
-          link: 'https://www.keycloak.org/',
-        },
-      ],
-      techstackItems: [
-        {
-          heading: 'Programming Languages',
-          description:
-            'Since 2017 I have been mostly developing in the following languages.',
-          items: [
-            {
-              uuid: 'java',
-              category: 'Backend',
-              title: 'Java',
-              iconUrl: 'https://www.vectorlogo.zone/logos/java/java-icon.svg',
-            },
-            {
-              uuid: 'kotlin',
-              category: 'Backend',
-              title: 'Kotlin',
-              iconUrl:
-                'https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg',
-            },
-            {
-              uuid: 'typescript',
-              category: 'Frontend',
-              title: 'Typescript',
-              iconUrl:
-                'https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg',
-            },
-            {
-              uuid: 'html',
-              category: 'Frontend',
-              title: 'HTML',
-              iconUrl:
-                'https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg',
-            },
-            {
-              uuid: 'css',
-              category: 'Frontend',
-              title: 'CSS / SCSS',
-              iconUrl:
-                'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg',
-            },
-            {
-              uuid: 'sql',
-              category: 'Database',
-              title: 'SQL',
-              iconUrl:
-                'https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg',
-            },
-          ],
-        },
-      ],
-    });
+    this.http
+      .get<TechstackSectionContent>('/assets/data/techstack.data.json')
+      .subscribe((techstackContent) =>
+        this.techStackSectionContent$.next(techstackContent)
+      );
   }
 }
