@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { UiButtonComponent } from '@sellemond/shared/ui-components';
 import { HtmlSanitizerService } from '@sellemond/shared/util-components';
 import { SocialLink } from '../model/social-link.model';
-import { UiHeadingComponent } from '../ui-heading/ui-heading.component';
+import { UiHeadingComponent } from '@sellemond/shared/ui-components';
 
 @Component({
   selector: 'components-ui-footer',
