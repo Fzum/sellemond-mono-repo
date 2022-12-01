@@ -35,4 +35,8 @@ export class UiFooterComponent {
   openEmailClient() {
     window.location.href = `mailto:${this.contactEmailAddress}`;
   }
+
+  getCurrentYear() {
+    return new Date().getFullYear();
+  }
 }
