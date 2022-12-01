@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-architects/ddd": "^2.1.2",
+    "@angular-architects/ddd": "3.0.0",
     "@angular/animations": "15.0.2",
     "@angular/common": "15.0.2",
     "@angular/compiler": "15.0.2",
